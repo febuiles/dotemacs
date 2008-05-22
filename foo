@@ -1,1 +1,0 @@
-(set-face-attribute 'default frame :height (- (face-attribute 'default :height) 10))
