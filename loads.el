@@ -1,18 +1,22 @@
 (setq load-path (cons "~/.emacs.d/" load-path))
-(load "paths.el")
-(load "requires.el")
-(load "hooks.el")
-(load "fonts.el")
-(load "vars.el")
-(load "keys.el")
-
-
+(load "paths")
+(load "requires")
+(load "hooks")
+(load "fonts")
+(load "vars")
+(load "keys")
+(load "pastie")
+(load "gitsum")
 (load "color-theme")
 (load "color-theme-autoloads")
 (load "color-theme-library")
 (load "inf-ruby")
 (load "rubydb3x")
 
+(require 'vc-git)
+ (when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))
+ (require 'git)
+
 (load-library "xscheme")
 
-(load "misc.el")
+(load "misc")
