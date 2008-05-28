@@ -12,10 +12,13 @@
 (load "color-theme-library")
 (load "inf-ruby")
 (load "rubydb3x")
+(load "rspec")
+(load "abbrev")
+(load "temp_files")
 
 (require 'vc-git)
  (when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))
- (require 'git)
+(require 'git)
 
 (load-library "xscheme")
 
