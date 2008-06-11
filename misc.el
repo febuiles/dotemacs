@@ -8,15 +8,10 @@
 (scroll-bar-mode)
 (global-font-lock-mode t)
 (show-paren-mode 1)
-(visit-tags-table "~/programacion/rbx/TAGS")
+;;(visit-tags-table "~/programacion/rbx/TAGS")
 
 (set-frame-height (selected-frame) 37)
 (set-frame-width (selected-frame) 120)
 (set-frame-position (selected-frame) 50 40)
-
-(defun log()
-  (interactive)
-  (vc-print-log))
-
 
 

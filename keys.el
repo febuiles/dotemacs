@@ -2,7 +2,7 @@
 (global-set-key [(meta 4)] 'query-replace)
 (global-set-key [f3] 'shell)
 (global-set-key [f2] 'fill-paragraph)
-(global-set-key [f4] 'log)
+(global-set-key [f4] 'vc-print-log)
 (global-set-key [f5] 'compile)
 (global-set-key [f6] 'kill-buffer)
 (global-set-key [f8] 'add-change-log-entry-other-window)
