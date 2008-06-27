@@ -1,5 +1,7 @@
 (global-set-key [(meta g)] 'goto-line) 
 (global-set-key [(meta 4)] 'query-replace)
+(global-set-key [(control x)(control g)] 'git-status)
+(global-set-key [(control x)(control i)] 'indent-region)
 (global-set-key [f3] 'shell)
 (global-set-key [f2] 'fill-paragraph)
 (global-set-key [f4] 'vc-print-log)
