@@ -14,4 +14,3 @@
 (set-frame-width (selected-frame) 120)
 (set-frame-position (selected-frame) 50 40)
 
-
