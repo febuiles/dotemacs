@@ -11,8 +11,10 @@
 (global-set-key [(meta -)] 'font-smaller) 
 (global-set-key [(meta \+)] 'font-larger)
 (global-set-key [(control \1)]
-  (lambda () (interactive) (switch-to-buffer "*scratch*")))
-(lambda nil (interactive) (switch-to-buffer "*scratch*"))
+  (lambda () (interactive) (switch-to-buffer "foo")))
+
+
+
 
 
 
