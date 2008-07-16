@@ -10,6 +10,12 @@
 (add-hook 'c-mode-hook 'turn-on-auto-fill)
 (add-hook 'ruby-mode-hook 'turn-on-auto-fill)
 
+;; Use C-x k to kill emacs client sessions.
+(add-hook 'server-switch-hook 
+	  (lambda ()
+	    (local-set-key (kbd "C-x k") 'server-edit)))
+
+
 
 
 
