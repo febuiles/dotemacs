@@ -13,7 +13,8 @@
 ;; Use C-x k to kill emacs client sessions.
 (add-hook 'server-switch-hook 
 	  (lambda ()
-	    (local-set-key (kbd "C-x k") 'server-edit)))
+	    (local-set-key (kbd "C-x C-k") 'server-edit)))
+
 
 
 
