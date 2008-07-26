@@ -13,4 +13,8 @@
 (set-frame-height (selected-frame) 37)
 (set-frame-width (selected-frame) 120)
 (set-frame-position (selected-frame) 50 40)
+(setq rinari-tags-file-name "TAGS")
+
+
+
 

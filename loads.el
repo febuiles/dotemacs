@@ -1,4 +1,5 @@
 (setq load-path (cons "~/.emacs.d/" load-path))
+(setq load-path (cons "~/.emacs.d/rinari" load-path))
 (load "paths")
 (load "requires")
 (load "hooks")
@@ -15,10 +16,12 @@
 (load "rspec")
 (load "abbrev")
 (load "temp_files")
-
+(load "nxml")
 (require 'vc-git)
  (when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))
 (require 'git)
+(require 'rinari)
+
 
 (load-library "xscheme")
 
