@@ -3,4 +3,5 @@
 (setq load-path (cons "~/.emacs.d/haskell" load-path))
 (setq load-path (cons "~/.emacs.d/git" load-path))
 (setq load-path (cons "~/.emacs.d/rinari" load-path))
+(setq load-path (cons "~/.emacs.d/nxml" load-path))
 (load "~/.emacs.d/haskell/haskell-site-file")

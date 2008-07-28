@@ -15,7 +15,7 @@
 (load "rspec")
 (load "abbrev")
 (load "temp_files")
-;;(load "nxml")
+(load "nxml")
 
 (require 'vc-git)
  (when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))
@@ -24,5 +24,4 @@
 
 
 (load-library "xscheme")
-
 (load "misc")
