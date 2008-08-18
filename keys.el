@@ -13,6 +13,7 @@
   (lambda () (interactive) (switch-to-buffer "foo")))
 (global-set-key [(control c)(control l)] 'rinari-find-controller)
 (global-set-key [(control c)(control m)] 'rinari-find-model)
+(global-set-key [(control c)(control t)] 'rinari-find-test)
 
 
 
