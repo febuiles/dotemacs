@@ -5,7 +5,7 @@
 (load "fonts")
 (load "vars")
 (load "keys")
-(load "pastie")
+;;(load "pastie")
 (load "gitsum")
 (load "color-theme")
 (load "color-theme-autoloads")
@@ -18,6 +18,7 @@
 (load "nxml")
 (load "shells")
 (load "quack")
+(load "gist")
 
 (require 'quack)
 (require 'vc-git)
