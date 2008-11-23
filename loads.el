@@ -18,8 +18,8 @@
 (load "shells")
 (load "quack")
 (load "gist")
-(load "textmate")
 (load "haskell-site-file")
+(load "textmate")
 
 (require 'quack)
 (require 'vc-git)

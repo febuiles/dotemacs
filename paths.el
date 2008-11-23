@@ -5,5 +5,5 @@
 (setq load-path (cons "~/.emacs.d/rinari" load-path))
 (setq load-path (cons "~/.emacs.d/nxml" load-path))
 (setq load-path (cons "~/.emacs.d/textmate.el" load-path))
-(setq load-path (cons "~/.emacs.d/textmate.el/vendor" load-path))
+
 
