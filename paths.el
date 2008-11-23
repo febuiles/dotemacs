@@ -6,4 +6,4 @@
 (setq load-path (cons "~/.emacs.d/nxml" load-path))
 (setq load-path (cons "~/.emacs.d/textmate.el" load-path))
 (setq load-path (cons "~/.emacs.d/textmate.el/vendor" load-path))
-(setq load-path (cons "~/.emacs.d/textmate.el/vendor/fuzzy-find-in-project" load-path))
+

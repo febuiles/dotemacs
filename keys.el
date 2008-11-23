@@ -15,8 +15,6 @@
 (global-set-key [(control c)(control m)] 'rinari-find-model)
 (global-set-key [(control c)(control t)] 'rinari-find-test)
 
-(global-set-key [(meta t)] 'fuzzy-find-in-project)
-(global-set-key [(meta T)] 'textmate-ido-goto-symbol)
 
 
 
