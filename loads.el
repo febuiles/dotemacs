@@ -5,7 +5,6 @@
 (load "fonts")
 (load "vars")
 (load "keys")
-;;(load "pastie")
 (load "gitsum")
 (load "color-theme")
 (load "color-theme-autoloads")
@@ -19,6 +18,8 @@
 (load "shells")
 (load "quack")
 (load "gist")
+(load "textmate")
+(load "haskell-site-file")
 
 (require 'quack)
 (require 'vc-git)

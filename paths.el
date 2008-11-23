@@ -4,4 +4,6 @@
 (setq load-path (cons "~/.emacs.d/git" load-path))
 (setq load-path (cons "~/.emacs.d/rinari" load-path))
 (setq load-path (cons "~/.emacs.d/nxml" load-path))
-(load "~/.emacs.d/haskell/haskell-site-file")
+(setq load-path (cons "~/.emacs.d/textmate.el" load-path))
+(setq load-path (cons "~/.emacs.d/textmate.el/vendor" load-path))
+(setq load-path (cons "~/.emacs.d/textmate.el/vendor/fuzzy-find-in-project" load-path))
