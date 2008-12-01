@@ -21,6 +21,8 @@
 (load "haskell-site-file")
 (load "textmate")
 (textmate-mode)
+(load "markdown")
+
 (require 'quack)
 (require 'vc-git)
  (when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))
