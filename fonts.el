@@ -1,4 +1,3 @@
-
 (defun increase-font-size ()
   (set-face-attribute 'default (selected-frame) :height (+ (face-attribute 'default :height) 10))
 )
@@ -19,6 +18,3 @@
 
 (set-default-font "-apple-inconsolata-medium-r-normal--0-0-0-0-m-0-iso10646-1")
 (set-face-attribute 'default (selected-frame) :height 180)
-
-
-

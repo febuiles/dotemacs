@@ -5,7 +5,6 @@
 (add-hook 'c++-mode-hook 'turn-on-auto-fill)
 (add-hook 'c-mode-hook 'turn-on-auto-fill)
 (add-hook 'ruby-mode-hook 'turn-on-auto-fill)
-
 ;; Use C-c k to kill emacs client sessions.
 (add-hook 'server-switch-hook 
 	  (lambda ()

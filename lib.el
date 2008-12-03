@@ -1,6 +1,5 @@
-;;
-;; Never understood why Emacs doesn't have this function.
-;;
+;; Stevey's functions
+
 (defun rename-file-and-buffer (new-name)
  "Renames both current buffer and file it's visiting to NEW-NAME." (interactive "sNew name: ")
  (let ((name (buffer-name))
@@ -11,8 +10,6 @@
 	 (message "A buffer named '%s' already exists!" new-name)
 	(progn (rename-file name new-name 1) (rename-buffer new-name) (set-visited-file-name new-name) (set-buffer-modified-p nil))))))
 
-
-;; Mueve el buffer al directorio seleccionado
 
 (defun move-buffer-file (dir)
 
