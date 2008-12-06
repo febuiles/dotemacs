@@ -29,6 +29,7 @@
 ;; Code:
 (eval-when-compile
   (require 'color-theme))
+(load "zenburn")
 
 (defun color-theme-gnome ()
   "Wheat on darkslategrey scheme.
