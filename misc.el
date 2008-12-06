@@ -2,7 +2,7 @@
 (display-time)
 (line-number-mode 1)
 (column-number-mode 1)
-(color-theme-andreas)
+(color-theme-zenburn)
 (menu-bar-mode)
 (tool-bar-mode nil)
 (scroll-bar-mode)
