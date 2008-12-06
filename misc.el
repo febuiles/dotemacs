@@ -27,6 +27,5 @@
   (setq indent-tabs-mode nil)
   (setq tab-width 8))
 
-
-
+(prefer-coding-system 'utf-8)
 
