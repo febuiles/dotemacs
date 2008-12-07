@@ -25,4 +25,8 @@
 (load "misc")
 (load "modes")
 (load "haml-mode")
+(load "syntax")
+(load "tumble")
+
+
 
