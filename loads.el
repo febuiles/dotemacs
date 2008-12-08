@@ -1,4 +1,5 @@
 (setq load-path (cons "~/.emacs.d/" load-path))
+(setq load-path (cons "~/.emacs.d/tumble" load-path))
 (load "paths")
 (load "requires")
 (load "hooks")
@@ -27,6 +28,8 @@
 (load "haml-mode")
 (load "syntax")
 (load "tumble")
+
+
 
 
 
