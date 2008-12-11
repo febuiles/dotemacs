@@ -1,6 +1,6 @@
 (setq load-path (cons "~/.emacs.d/vendor"  load-path))
-(setq load-path (cons "~/.emacs.d/vendor/themes" load-path))
-(setq load-path (cons "~/.emacs.d/vendor/themes" load-path))
+(setq load-path (cons "~/.emacs.d/tumble" load-path))
+(setq load-path (cons "~/.emacs.d/tumble/vendor" load-path))
 (setq load-path (cons "~/.emacs.d/vendor/themes" load-path))
 (setq load-path (cons "~/.emacs.d/vendor/ruby" load-path))
 (setq load-path (cons "~/.emacs.d/vendor/haskell" load-path))

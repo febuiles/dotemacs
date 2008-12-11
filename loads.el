@@ -1,5 +1,4 @@
 (setq load-path (cons "~/.emacs.d/" load-path))
-(setq load-path (cons "~/.emacs.d/tumble" load-path))
 (load "paths")
 (load "requires")
 (load "hooks")
@@ -17,7 +16,6 @@
 (load "temp_files")
 (load "nxml")
 (load "shells")
-(load "quack")
 (load "gist")
 (load "haskell-site-file")
 (load "textmate")
@@ -28,8 +26,3 @@
 (load "haml-mode")
 (load "syntax")
 (load "tumble")
-
-
-
-
-
