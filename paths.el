@@ -8,4 +8,5 @@
 (setq load-path (cons "~/.emacs.d/vendor/rinari" load-path))
 (setq load-path (cons "~/.emacs.d/vendor/nxml" load-path))
 (setq load-path (cons "~/.emacs.d/vendor/textmate.el" load-path))
+(setq load-path (cons "~/.emacs.d/vendor/vm" load-path))
 
