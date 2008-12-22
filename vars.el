@@ -8,4 +8,6 @@
 (setq query-replace-highlight t)
 (setq default-fill-column 77)
 (setq c-tab-always-indent "other") 
+(setq rinari-tags-file-name "TAGS")
+(setq ispell-dictionary "spanish")
 

@@ -6,6 +6,7 @@
 (global-set-key [f4] 'vc-print-log)
 (global-set-key [f5] 'compile)
 (global-set-key [f6] 'kill-buffer)
+(global-set-key [f7] 'vm)
 (global-set-key [f8] 'add-change-log-entry-other-window)
 (global-set-key [(meta -)] 'font-smaller) 
 (global-set-key [(meta \+)] 'font-larger)
