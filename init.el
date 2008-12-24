@@ -1,4 +1,8 @@
 (custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
  '(case-fold-search t)
  '(markdown-command "Markdown.pl | SmartyPants.pl")
  '(mouse-wheel-mode t nil (mwheel))
@@ -44,7 +48,7 @@
 (prefer-coding-system 'utf-8)
 
 ;; use y/n instead of yes/no
-(defalias 'yes-or-no-p 'y-or-n-p)es
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; default window sizes
 (set-frame-height (selected-frame) 37)
@@ -58,3 +62,5 @@
 
 ;; nice color theme stolen from emacs-starter-kit
 (color-theme-zenburn)
+(require 'zenburn)
+
