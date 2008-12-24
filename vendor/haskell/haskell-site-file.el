@@ -216,3 +216,4 @@ Pass the current buffer's file to the inferior haskell process.
 ;; no-update-autoloads: t
 ;; End:
 ;;; haskell-site-file.el ends here
+(provide 'haskell-site-file)

@@ -1,4 +1,4 @@
-(load "nxml/autostart.el")
+(load "autostart")
 
 (setq
   nxhtml-global-minor-mode t
@@ -8,3 +8,5 @@
   rng-nxml-auto-validate-flag nil
   nxml-degraded t)
 (add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . eruby-nxhtml-mumamo))
+
+(provide 'nxml-loader)
