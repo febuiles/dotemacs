@@ -9,10 +9,6 @@
 (load "color-theme")
 (load "color-theme-autoloads")
 (load "color-theme-library")
-(load "inf-ruby")
-(load "rubydb3x")
-(load "rspec")
-(load "abbrev")
 (load "temp_files")
 (load "nxml")
 (load "shells")
@@ -26,3 +22,8 @@
 (load "haml-mode")
 (load "syntax")
 (load "tumble")
+
+(autoload 'inf-ruby "vendor/ruby/inf-ruby" "Run an inferior Ruby process" t)
+(autoload 'inf-ruby-keys "vendor/ruby/inf-ruby" "" t)
+(eval-after-load 'ruby-mode
+  '(add-hook 'ruby-mode-hook 'inf-ruby-keys))
