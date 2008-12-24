@@ -1,6 +1,7 @@
+
 (setq initial-major-mode 'markdown-mode)
-(setq auto-mode-alist (cons '("\\.el\\'" . lisp-interaction-mode) auto-mode-alist))
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
+(add-to-list 'auto-mode-alist '("\\.el$" . lisp-interaction-mode))
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
