@@ -12,9 +12,13 @@
 (global-set-key [(meta \+)] 'font-larger)
 (global-set-key [(control \1)]
   (lambda () (interactive) (switch-to-buffer "foo")))
-(global-set-key [(control c)(control l)] 'rinari-find-controller)
-(global-set-key [(control c)(control m)] 'rinari-find-model)
-(global-set-key [(control c)(control t)] 'rinari-find-test)
+
+(define-key ruby-mode-map (kbd "C-c C-l") 'rinari-find-controller)
+(define-key ruby-mode-map (kbd "C-c C-m") 'rinari-find-model)
+(define-key ruby-mode-map (kbd "C-c C-t") 'rinari-find-test)
+
+(define-key ruby-mode-map (kbd "C-c C-s") 'inf-ruby)
+(define-key ruby-mode-map (kbd "C-c C-r") 'ruby-send-region)
 
 
 
