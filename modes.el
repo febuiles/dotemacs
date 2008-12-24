@@ -1,5 +1,7 @@
-
+;; use markdown-mode by default
 (setq initial-major-mode 'markdown-mode)
+
+;; set some of the default major modes
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
 (add-to-list 'auto-mode-alist '("\\.el$" . lisp-interaction-mode))
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
