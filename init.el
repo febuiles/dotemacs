@@ -1,15 +1,5 @@
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(case-fold-search t)
- '(markdown-command "Markdown.pl | SmartyPants.pl")
- '(mouse-wheel-mode t nil (mwheel))
- '(show-paren-mode t nil (paren))
- '(standard-indent 4)
- '(transient-mark-mode t)
- '(visible-bell t))
+
+
 
 ;; don't use tabs
 (setq-default indent-tabs-mode nil)
@@ -34,18 +24,24 @@
 (setq user-full-name "Federico Builes")
 
 ;; personal preferences
-(setq search-highlight t)
-(setq query-replace-highlight t)
-(setq default-fill-column 77)
-(setq c-tab-always-indent "other") 
-(setq browse-url-browser-function 'browse-default-macosx-brower)
-(setq make-backup-files nil) 
-(setq ispell-dictionary "spanish")
+(mouse-wheel-mode t)
 (line-number-mode 1)
 (column-number-mode 1)
 (global-font-lock-mode t)
 (show-paren-mode 1)
 (prefer-coding-system 'utf-8)
+(setq case-fold-search t
+      search-highlight t
+      query-replace-highlight t
+      default-fill-column 77
+      c-tab-always-indent "other"
+      browse-url-browser-function 'browse-default-macosx-brower
+      make-backup-files nil
+      ispell-dictionary "spanish"
+      markdown-command "Markdown.pl | SmartyPants.pl"
+      standard-indent 4
+      transient-mark-mode t
+      visible-bell t)
 
 ;; use y/n instead of yes/no
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -57,8 +53,23 @@
 
 (server-start)
 
+;; use a nice font by default
+(set-default-font "-apple-inconsolata-medium-r-normal--0-0-0-0-m-0-iso10646-1")
+(set-face-attribute 'default (selected-frame) :height 180)
+
+;; add ~/.emacs.d to the load path
+(add-to-list 'load-path "~/.emacs.d")
+
+;; add all the directories in .emacs.d/vendor/ to the path
+(let* ((files (directory-files "~/.emacs.d/vendor" t "[^\.+]")))
+  (mapcar (lambda (d) (add-to-list 'load-path d)) files))
+
 ;; load everything else
-(load "~/.emacs.d/loads.el")
+(load "requires")
+(load "bindings")
+(load "personal")
+(load "modes")
+(load "hooks")
 
 ;; nice color theme stolen from emacs-starter-kit
 (color-theme-zenburn)

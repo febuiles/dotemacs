@@ -11,10 +11,6 @@
 (require 'ruby-electric)
 (require 'rinari)
 (require 'ruby-compilation)
-(autoload 'inf-ruby "vendor/ruby/inf-ruby" "Run an inferior Ruby process" t)
-(autoload 'inf-ruby-keys "vendor/ruby/inf-ruby" "" t)
-(eval-after-load 'ruby-mode
-  '(add-hook 'ruby-mode-hook 'inf-ruby-keys))
 
 ;; shiny colors!
 (require 'color-theme)
@@ -23,9 +19,11 @@
 
 ;; some useful modes
 (require 'markdown-mode)
+(require 'haml-mode)
 (require 'tumble)
 (require 'erlang-start)
-(require 'haml-mode)
+(require 'haskell-site-file)
+(require 'nxml-loader)
 
 ;; defunkt's stuff
 (require 'gist)
