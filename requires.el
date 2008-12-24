@@ -10,7 +10,8 @@
 ;; Ruby
 (require 'ri)
 (require 'ruby-electric)
-(require 'ruby-compilation)
 (require 'rinari)
+(require 'ruby-compilation)
+
 
 
