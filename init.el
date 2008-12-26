@@ -75,3 +75,6 @@
 (color-theme-zenburn)
 (require 'zenburn)
 
+;; include ELPA if it exists
+(if (file-exists-p "~/.emacs.d/elpa/package.el")
+    (load (expand-file-name "~/.emacs.d/elpa/package.el")))
