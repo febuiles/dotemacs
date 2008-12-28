@@ -1,6 +1,3 @@
-
-
-
 ;; don't use tabs
 (setq-default indent-tabs-mode nil)
 
