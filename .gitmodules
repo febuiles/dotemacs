@@ -1,3 +1,6 @@
 [submodule "textmate.el"]
 	path = textmate.el
 	url = git://github.com/febuiles/textmate.el.git
+[submodule "vendor/gist.el"]
+	path = vendor/gist.el
+	url = git://github.com/defunkt/gist.el.git
