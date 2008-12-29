@@ -1,15 +1,40 @@
 ;; gist.el --- Emacs integration for gist.github.com
-;; Copyright (C) 2008  Christian Neukirchen <purl.org/net/chneukirchen>
-;; Copyright (C) 2008  Chris Wanstrath <chris@ozmm.org>
-;; Copyright (C) 2008  Will Farrington <wcfarrington@gmail.com>
-;; Licensed under the same terms as Emacs.
 
-;; Version: 0.3.1
-;; 26aug2008  +wfarr+
-;; 25aug2008  +defunkt+
-;; 21jul2008  +chris+
+;; Author: Christian Neukirchen <purl.org/net/chneukirchen>
+;; Maintainer: Chris Wanstrath <chris@ozmm.org>
+;; Contributors: 
+;; Will Farrington <wcfarrington@gmail.com>
+;; Michael Ivey
+;; Phil Hagelberg
+;; Version: 0.3
+;; Created: 21 Jul 2008
+;; Keywords: gist git github paste pastie pastebin
 
-;; Ideas: fork
+;; This file is NOT part of GNU Emacs.
+
+;; This is free software; you can redistribute it and/or modify it under
+;; the terms of the GNU General Public License as published by the Free
+;; Software Foundation; either version 2, or (at your option) any later
+;; version.
+;;
+;; This is distributed in the hope that it will be useful, but WITHOUT
+;; ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+;; FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+;; for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
+;; Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+;; MA 02111-1307, USA.
+
+;;; Commentary:
+ 
+;; Uses your local GitHub config if it can find it.
+;; See http://github.com/blog/180-local-github-config
+
+;;; Code:
+ 
+(eval-when-compile (require 'cl))
 
 (defvar github-username "febuiles")
 (defvar github-api-key "1948a85f5274af72019dd0964d15044f")
@@ -17,7 +42,7 @@
 (defvar gist-supported-modes-alist '((action-script-mode . "as")
                                      (c-mode . "c")
                                      (c++-mode . "cpp")
-                                     (common-lisp-mode . "el")
+                                     (common-lisp-mode . "lisp")
                                      (css-mode . "css")
                                      (diff-mode . "diff")
                                      (emacs-lisp-mode . "el")
@@ -34,8 +59,8 @@
                                      (objective-c-mode . "m")
                                      (perl-mode "pl")
                                      (php-mode . "php")
-                                     (python-mode . "sc")
-                                     (ruby-mode . "rbx")
+                                     (python-mode . "py")
+                                     (ruby-mode . "rb")
                                      (text-mode . "txt")
                                      (sql-mode . "sql")
                                      (scheme-mode . "scm")
@@ -45,34 +70,48 @@
                                      (tex-mode . "tex")
                                      (xml-mode . "xml")))
 
+(defvar gist-view-gist nil
+  "If non-nil, automatically use `browse-url' to view gists after they're posted.")
+
 ;;;###autoload
 (defun gist-region (begin end &optional private)
   "Post the current region as a new paste at gist.github.com
-Copies the URL into the kill ring."
-  (interactive "r")
-  (let* ((file (or (buffer-file-name) (buffer-name)))
-         (name (file-name-nondirectory file))
-         (ext (or (cdr (assoc major-mode gist-supported-modes-alist))
-                  (file-name-extension file)
-                  "txt"))
-         (output (generate-new-buffer " *gist*"))
-         (login (github-auth-string))
-         (do-private (if private "-F private=1" "")))
-    (shell-command-on-region
-     begin end
-     (format (concat "curl -sS "
-                     "%s "
-                     "-F 'file_ext[gistfile1]=.%s' "
-                     "-F 'file_name[gistfile1]=%s' "
-                     "-F 'file_contents[gistfile1]=<-' "
-                     "%s "
-                     "http://gist.github.com/gists") login ext name do-private)
-     output)
-    (with-current-buffer output
-      (re-search-backward "href=\"\\(.*\\)\"")
-      (message "Paste created: %s" (match-string 1))
-      (kill-new (match-string 1)))
-   (kill-buffer output)))
+Copies the URL into the kill ring.
+
+With a prefix argument, makes a private paste."
+  (interactive "r\nP")
+  (destructuring-bind (login . token) (github-auth-info)
+    (let* ((file (or (buffer-file-name) (buffer-name)))
+           (name (file-name-nondirectory file))
+           (ext (or (cdr (assoc major-mode gist-supported-modes-alist))
+                    (file-name-extension file)
+                    "txt"))
+           (url-max-redirections 0)
+           (url-request-method "POST")
+           (url-request-data
+            (gist-make-query-string
+             `(,@(if private '(("private" . "1")))
+               ("login" . ,login)
+               ("token" . ,token)
+               ("file_ext[gistfile1]" . ,(concat "." ext))
+               ("file_name[gistfile1]" . ,name)
+               ("file_contents[gistfile1]" . ,(buffer-substring begin end))))))
+      (with-current-buffer (url-retrieve-synchronously "http://gist.github.com/gists")
+        (re-search-backward "^Location: \\(.*\\)$")
+        (message "Paste created: %s" (match-string 1))
+        (if gist-view-gist (browse-url (match-string 1)))
+        (kill-new (match-string 1))
+        (kill-buffer (current-buffer))))))
+
+(defun gist-make-query-string (params)
+  "Returns a query string constructed from PARAMS, which should be
+a list with elements of the form (KEY . VALUE). KEY and VALUE
+should both be strings."
+  (mapconcat
+   (lambda (param)
+     (concat (url-hexify-string (car param)) "="
+             (url-hexify-string (cdr param))))
+   params "&"))
 
 ;;;###autoload
 (defun gist-region-private (begin end)
@@ -80,11 +119,6 @@ Copies the URL into the kill ring."
 Copies the URL into the kill ring."
   (interactive "r")
   (gist-region begin end t))
-
-(defun github-raw-auth-string (user token)
-  "Given a username and API token, returns a curl-friendly string."
-  (if (and (> (length user) 0) (> (length token) 0))
-      (format "-F 'login=%s' -F 'token=%s'" user token)))
 
 (defun github-config (key)
   "Returns a GitHub specific value from the global Git config."
@@ -98,37 +132,34 @@ Copies the URL into the kill ring."
   "Sets a GitHub specific value to the global Git config."
   (shell-command-to-string (format "git config --global github.%s %s" key value)))
 
-(defun github-auth-string ()
-  "Returns a curl-friendly GitHub auth string.
-Searches for a GitHub username and token in the global git config.
-If nothing is found, prompts for the info then sets it to the git config."
+(defun github-auth-info ()
+  "Returns the user's GitHub authorization information.
+Searches for a GitHub username and token in the global git config,
+and returns (USERNAME . TOKEN). If nothing is found, prompts
+for the info then sets it to the git config."
   (interactive)
 
   (let* ((user (github-config "user"))
-         (token (github-config "token"))
-         (auth-string (github-raw-auth-string user token)))
+         (token (github-config "token")))
 
-    (if (> (length auth-string) 0)
-        auth-string
+    (when (not user)
+      (setq user (read-string "GitHub username: "))
+      (github-set-config "user" user))
 
-      (cond
-       ((not user)
-        (setq user (read-string "GitHub username: "))
-        (github-set-config "user" user)))
+    (when (not token)
+      (setq token (read-string "GitHub API token: "))
+      (github-set-config "token" token))
 
-      (cond
-       ((not token)
-        (setq token (read-string "GitHub API token: "))
-        (github-set-config "token" token)))
-
-      (github-raw-auth-string user token))))
+    (cons user token)))
 
 ;;;###autoload
-(defun gist-buffer ()
+(defun gist-buffer (&optional private)
   "Post the current buffer as a new paste at gist.github.com.
-Copies the URL into the kill ring."
-  (interactive)
-  (gist-region (point-min) (point-max)))
+Copies the URL into the kill ring.
+
+With a prefix argument, makes a private paste."
+  (interactive "P")
+  (gist-region (point-min) (point-max) private))
 
 ;;;###autoload
 (defun gist-buffer-private ()
@@ -138,13 +169,15 @@ Copies the URL into the kill ring."
   (gist-region-private (point-min) (point-max)))
 
 ;;;###autoload
-(defun gist-region-or-buffer ()
+(defun gist-region-or-buffer (&optional private)
   "Post either the current region, or if mark is not set, the current buffer as a new paste at gist.github.com
-Copies the URL into the kill ring."
-  (interactive)
+Copies the URL into the kill ring.
+
+With a prefix argument, makes a private paste."
+  (interactive "P")
   (condition-case nil
-      (gist-region (point) (mark))
-      (mark-inactive (gist-buffer))))
+      (gist-region (point) (mark) private)
+      (mark-inactive (gist-buffer private))))
 
 ;;;###autoload
 (defun gist-region-or-buffer-private ()
