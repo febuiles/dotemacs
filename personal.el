@@ -27,4 +27,9 @@
       `((".*" ,user-temporary-file-directory t)))
 (setq auto-save-default nil)
 
+; make completion buffers disappear after 5 seconds.
+(add-hook 'completion-setup-hook
+  (lambda () (run-at-time 8 nil
+    (lambda () (delete-windows-on "*Completions*")))))
+
 
