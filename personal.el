@@ -1,3 +1,5 @@
+;; personal.el - random bits of elisp
+
 (defun increase-font-size ()
   (set-face-attribute 'default (selected-frame) :height (+ (face-attribute 'default :height) 10)))
 
@@ -32,4 +34,13 @@
   (lambda () (run-at-time 8 nil
     (lambda () (delete-windows-on "*Completions*")))))
 
+;; HAML stuff
+(defun haml-replace-region (begin end)
+  "Replaces the current block of Haml code with the HTML equivalent"
+  (interactive "r")
+  (shell-command-on-region begin end "haml" "haml-output" t))
 
+(defun haml-output-region (begin end)
+  "Returns the HTML output for the current block of Haml code"
+  (interactive "r")
+  (shell-command-on-region begin end "haml" "haml-output" nil))
