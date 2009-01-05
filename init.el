@@ -61,6 +61,10 @@
 (let* ((files (directory-files "~/.emacs.d/vendor" t "[^\.+]")))
   (mapcar (lambda (d) (add-to-list 'load-path d)) files))
 
+;; include ELPA if it exists
+(if (file-exists-p "~/.emacs.d/elpa/package.el")
+    (load (expand-file-name "~/.emacs.d/elpa/package.el")))
+
 ;; load everything else
 (load "requires")
 (load "bindings")
@@ -72,6 +76,3 @@
 (color-theme-zenburn)
 (require 'zenburn)
 
-;; include ELPA if it exists
-(if (file-exists-p "~/.emacs.d/elpa/package.el")
-    (load (expand-file-name "~/.emacs.d/elpa/package.el")))
