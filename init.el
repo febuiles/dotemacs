@@ -38,7 +38,12 @@
       markdown-command "Markdown.pl | SmartyPants.pl"
       standard-indent 4
       transient-mark-mode t
-      visible-bell t)
+      visible-bell t
+      show-paren-delay 0) 
+
+;; nice parentheses 
+(show-paren-mode t)                  
+(setq show-paren-style 'expression) 
 
 ;; use y/n instead of yes/no
 (defalias 'yes-or-no-p 'y-or-n-p)
