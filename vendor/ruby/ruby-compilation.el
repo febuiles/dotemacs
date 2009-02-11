@@ -49,7 +49,7 @@
 ;;; Code:
 
 (require 'ansi-color)
-(require 'pcmpl-rake)
+;;(require 'pcmpl-rake)
 (require 'compile)
 (require 'inf-ruby)
 (require 'which-func)
