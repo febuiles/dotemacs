@@ -9,7 +9,7 @@
 ;; ruby
 (require 'ri)
 (require 'ruby-electric)
-(require 'rinari)
+;;(require 'rinari)
 (require 'ruby-compilation)
 
 ;; shiny colors!
@@ -21,6 +21,7 @@
 (require 'markdown-mode)
 (require 'haml-mode)
 (require 'tumble)
+(require 'lyricwiki)
 (require 'erlang-start)
 (require 'haskell-site-file)
 (require 'nxml-loader)

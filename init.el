@@ -80,4 +80,3 @@
 ;; nice color theme stolen from emacs-starter-kit
 (color-theme-zenburn)
 (require 'zenburn)
-
