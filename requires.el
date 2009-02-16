@@ -25,6 +25,8 @@
 (require 'erlang-start)
 (require 'haskell-site-file)
 (require 'nxml-loader)
+(require 'bbdb)                                                       
+(bbdb-initialize)
 
 ;; defunkt's stuff
 (require 'gist)
