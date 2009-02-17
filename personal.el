@@ -44,3 +44,12 @@
   "Returns the HTML output for the current block of Haml code"
   (interactive "r")
   (shell-command-on-region begin end "haml" "haml-output" nil))
+
+;; set the default OS X browser
+(defun browse-default-macosx-browser (url &optional new-window)
+  (interactive (browse-url-interactive-arg "URL: "))
+  (let ((url
+	 (if (aref (url-generic-parse-url url) 0)
+	     url
+	   (concat "http://" url))))
+    (start-process (concat "open " url) nil "open" url)))

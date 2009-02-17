@@ -32,14 +32,14 @@
       query-replace-highlight t
       default-fill-column 77
       c-tab-always-indent "other"
-      browse-url-browser-function 'browse-default-macosx-brower
+      browse-url-browser-function 'browse-default-macosx-browser
       make-backup-files nil
       ispell-dictionary "spanish"
       markdown-command "Markdown.pl | SmartyPants.pl"
       standard-indent 4
       transient-mark-mode t
       visible-bell t
-      show-paren-delay 0) 
+      show-paren-delay 0)
 
 ;; nice parentheses 
 (show-paren-mode t)                  
