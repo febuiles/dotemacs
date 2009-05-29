@@ -1,9 +1,0 @@
-[submodule "vendor/textmate.el"]
-	path = vendor/textmate.el
-	url = git://github.com/febuiles/textmate.el.git
-[submodule "vendor/gist.el"]
-	path = vendor/gist.el
-	url = git://github.com/defunkt/gist.el.git
-[submodule "vendor/rinari"]
-	path = vendor/rinari
-		url = git://github.com/technomancy/rinari.git
