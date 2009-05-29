@@ -30,7 +30,7 @@
 (setq case-fold-search t
       search-highlight t
       query-replace-highlight t
-      default-fill-column 77
+      default-fill-column 100
       c-tab-always-indent "other"
       browse-url-browser-function 'browse-default-macosx-browser
       make-backup-files nil
