@@ -1,4 +1,4 @@
 *.elc
 url/
-*tumble/
+vendor/tumble
 elpa/
