@@ -37,22 +37,3 @@
 
 ;; Spelling
 (global-set-key "\C-c\C-w" 'ispell-word)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

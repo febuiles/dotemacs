@@ -53,3 +53,22 @@
 	     url
 	   (concat "http://" url))))
     (start-process (concat "open " url) nil "open" url)))
+
+;; Johnson JS2 functions stolen from http://ozmm.org/posts/johnson.html
+(defun js2-execute-buffer () 
+  (interactive)
+  (shell-command (concat "johnson " (buffer-file-name))))
+
+(defun js2-execute-line ()
+  (interactive)
+  (save-excursion
+    (call-process-region (point-at-bol) 
+                         (point-at-eol)
+                         "johnson"
+                         nil
+                         (get-buffer-create "*johnson-line*"))
+    (with-current-buffer (get-buffer "*johnson-line*")
+      (search-backward "\n\n" nil t)
+      (replace-match "" nil t)
+      (message (buffer-string))
+      (kill-buffer nil))))
