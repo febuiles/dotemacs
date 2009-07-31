@@ -8,7 +8,7 @@
 (add-hook 'html-mode-hook 'turn-off-auto-fill)
 
 ;; Use C-c k to kill emacs client sessions.
-(add-hook 'server-switch-hook 
+(add-hook 'server-switch-hook
 	  (lambda ()
 	    (local-set-key (kbd "C-c k") 'server-edit)))
 
@@ -19,6 +19,12 @@
   '(add-hook 'ruby-mode-hook 'inf-ruby-keys))
 
 
+;; Pre-save hooks (Stack Overflow ftw! http://stackoverflow.com/questions/1214407/how-to-write-a-global-save-hook-for-emacs)
+(defun unix-newline ()
+  (set-buffer-file-coding-system 'undecided-unix))
+
+(add-hook 'before-save-hook 'unix-newline)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 
 
