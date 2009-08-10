@@ -1,6 +1,5 @@
 
 ;; git
-(require 'vm)
 (require 'vc-git)
  (when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))
 (require 'git)
@@ -21,7 +20,7 @@
 (require 'markdown-mode)
 (require 'haml-mode)
 (require 'tumble)
-(require 'lyricwiki)
+;;(require 'lyricwiki)
 (require 'erlang-start)
 (require 'haskell-site-file)
 (require 'nxml-loader)
