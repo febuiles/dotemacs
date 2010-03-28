@@ -8,10 +8,10 @@
 (ansi-color-for-comint-mode-on)
 
 ;; use cmd as meta in Carbon Emacs
-(setq mac-command-modifier 'meta) 
+(setq mac-command-modifier 'meta)
 
 ;; hide all the chrome.
-(setq inhibit-startup-message t)	
+(setq inhibit-startup-message t)
 (menu-bar-mode nil)
 (tool-bar-mode nil)
 (scroll-bar-mode nil)
@@ -41,9 +41,9 @@
       visible-bell t
       show-paren-delay 0)
 
-;; nice parentheses 
-(show-paren-mode t)                  
-(setq show-paren-style 'expression) 
+;; nice parentheses
+(show-paren-mode t)
+(setq show-paren-style 'expression)
 
 ;; use y/n instead of yes/no
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -85,6 +85,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
+ '(haskell-font-lock-symbols t)
  '(js2-basic-offset 4))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.

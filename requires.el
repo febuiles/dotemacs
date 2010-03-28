@@ -20,7 +20,7 @@
 (require 'markdown-mode)
 (require 'haml-mode)
 (require 'tumble)
-;;(require 'lyricwiki)
+(require 'lyricwiki)
 (require 'erlang-start)
 (require 'haskell-site-file)
 (require 'nxml-loader)
