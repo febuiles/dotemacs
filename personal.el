@@ -29,7 +29,7 @@
       `((".*" ,user-temporary-file-directory t)))
 (setq auto-save-default nil)
 
-; make completion buffers disappear after 5 seconds.
+; make completion buffers disappear after 8 seconds.
 (add-hook 'completion-setup-hook
   (lambda () (run-at-time 8 nil
     (lambda () (delete-windows-on "*Completions*")))))
@@ -55,14 +55,14 @@
     (start-process (concat "open " url) nil "open" url)))
 
 ;; Johnson JS2 functions stolen from http://ozmm.org/posts/johnson.html
-(defun js2-execute-buffer () 
+(defun js2-execute-buffer ()
   (interactive)
   (shell-command (concat "johnson " (buffer-file-name))))
 
 (defun js2-execute-line ()
   (interactive)
   (save-excursion
-    (call-process-region (point-at-bol) 
+    (call-process-region (point-at-bol)
                          (point-at-eol)
                          "johnson"
                          nil
@@ -72,3 +72,22 @@
       (replace-match "" nil t)
       (message (buffer-string))
       (kill-buffer nil))))
+
+
+;; === Fix the "copy-paste from MS Word" issue on Mac OS X ===
+;; prohibit pasting of TIFFs
+(defun x-selection-value (type)
+ (let ((data-types '(public.file-url
+                      public.utf16-plain-text
+                      com.apple.traditional-mac-plain-text))
+   text)
+   (while (and (null text) data-types)
+     (setq text (condition-case nil
+            (x-get-selection type (car data-types))
+          (error nil)))
+     (setq data-types (cdr data-types)))
+   (if text
+   (remove-text-properties 0 (length text) '(foreign-selection nil)
+text))
+   text))
+
