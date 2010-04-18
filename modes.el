@@ -14,6 +14,7 @@
 (add-to-list 'auto-mode-alist '("\\.rhtml$" . nxhtml-mode))
 (add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (add-to-list 'auto-mode-alist '("\\.treetop$" . treetop-mode))
 

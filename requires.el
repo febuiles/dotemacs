@@ -30,6 +30,8 @@
 (require 'textmate)
 (textmate-mode)
 
+(require 'peepopen)
+
 
 
 
