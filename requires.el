@@ -32,6 +32,10 @@
 
 ;; (require 'peepopen)
 
+;; ZenCoding
+(require 'zencoding-mode)
+
+
 
 
 

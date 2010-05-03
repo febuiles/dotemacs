@@ -8,6 +8,9 @@
 (add-hook 'ruby-mode-hook 'turn-on-auto-fill)
 (add-hook 'html-mode-hook 'turn-off-auto-fill)
 
+;; Use ZenCoding for all markup modes
+(add-hook 'sgml-mode-hook 'zencoding-mode)
+
 ;; Add automatic spelling to Markdown and Text modes.
 (add-hook 'markdown-mode-hook 'flyspell-mode)
 (add-hook 'text-mode-hook 'flyspell-mode)
@@ -28,3 +31,5 @@
   (set-buffer-file-coding-system 'undecided-unix))
 (add-hook 'before-save-hook 'unix-newline)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+
