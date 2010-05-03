@@ -33,3 +33,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 
+;; M-x compile should call "open html" instead of make
+(add-hook 'html-mode-hook
+  (lambda ()
+    (set (make-local-variable 'compile-command) (concat "open " (buffer-name)))))

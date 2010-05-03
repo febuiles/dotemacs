@@ -90,4 +90,3 @@
    (remove-text-properties 0 (length text) '(foreign-selection nil)
 text))
    text))
-
