@@ -16,7 +16,6 @@
 (tool-bar-mode nil)
 (scroll-bar-mode nil)
 
-;; this is me
 (setq user-mail-address "federico.builes@gmail.com")
 (setq user-full-name "Federico Builes")
 
@@ -37,6 +36,7 @@
       ispell-dictionary "spanish"
       markdown-command "Markdown.pl | SmartyPants.pl"
       standard-indent 4
+      css-indent-offset 2
       transient-mark-mode t
       visible-bell t
       show-paren-delay 0)
