@@ -61,6 +61,7 @@
 	  (region ((t (:background "#27292A"))))
 	  (mode-line ((t (:background "grey75" :foreground "black"))))
 	  (highlight ((t (:background "#111111"))))
+          (show-paren-match ((t (:background "#2D2A2E"))))
 	  (highline-face ((t (:background "SeaGreen"))))
 	  (left-margin ((t (nil))))
 	  (text-cursor ((t (:background "yellow" :foreground "black"))))
