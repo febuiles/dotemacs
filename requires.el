@@ -34,9 +34,9 @@
 
 ;; Yasnippet
 (require 'yasnippet)
-(setq yas/root-directory "~/.emacs.d/yasnippet/snippets/")
-(yas/load-directory yas/root-directory)
 (yas/initialize)
+(yas/load-directory "~/.emacs.d/vendor/yasnippet/snippets")
+
 
 
 
