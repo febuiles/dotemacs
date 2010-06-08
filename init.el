@@ -38,6 +38,7 @@
       standard-indent 4
       css-indent-offset 2
       transient-mark-mode t
+      show-trailing-whitespace t
       visible-bell t
       show-paren-delay 0)
 
@@ -77,9 +78,10 @@
 (load "modes")
 (load "hooks")
 
-;; nice color theme stolen from emacs-starter-kit
-(color-theme-zenburn)
-(require 'zenburn)
+(load-file "~/.emacs.d/vendor/twilight/twilight.el")
+(color-theme-initialize)
+(color-theme-twilight)
+
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.

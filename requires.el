@@ -1,4 +1,3 @@
-
 ;; git
 (require 'vc-git)
  (when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))
@@ -29,8 +28,6 @@
 (require 'gist)
 (require 'textmate)
 (textmate-mode)
-
-;; (require 'peepopen)
 
 ;; ZenCoding
 (require 'zencoding-mode)
