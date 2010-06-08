@@ -32,6 +32,14 @@
 ;; ZenCoding
 (require 'zencoding-mode)
 
+;; Yasnippet
+(require 'yasnippet)
+(setq yas/root-directory "~/.emacs.d/yasnippet/snippets/")
+(yas/load-directory yas/root-directory)
+(yas/initialize)
+
+
+
 
 
 
