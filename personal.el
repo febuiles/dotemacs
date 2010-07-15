@@ -90,3 +90,10 @@
    (remove-text-properties 0 (length text) '(foreign-selection nil)
 text))
    text))
+
+;; Alex Schroeder [http://www.emacswiki.org/cgi-bin/wiki/OccurBuffer]
+(defun isearch-occur ()
+  "*Invoke `occur' from within isearch."
+  (interactive)
+  (let ((case-fold-search isearch-case-fold-search))
+    (occur (if isearch-regexp isearch-string (regexp-quote isearch-string)))))

@@ -38,11 +38,12 @@
       standard-indent 4
       css-indent-offset 2
       transient-mark-mode t
-      show-trailing-whitespace t
       visible-bell t
       show-paren-delay 0)
 
 ;; nice parentheses
+(setq-default show-trailing-whitespace t)
+
 (show-paren-mode t)
 (setq show-paren-style 'expression)
 
