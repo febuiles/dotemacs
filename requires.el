@@ -20,9 +20,9 @@
 (require 'haml-mode)
 (require 'tumble)
 (require 'lyricwiki)
-(require 'erlang-start)
+
 (require 'haskell-site-file)
-(require 'nxml-loader)
+
 
 ;; defunkt's stuff
 (require 'gist)

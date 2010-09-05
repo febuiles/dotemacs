@@ -68,6 +68,8 @@
 (let* ((files (directory-files "~/.emacs.d/vendor" t "[^\.+]")))
   (mapcar (lambda (d) (add-to-list 'load-path d)) files))
 
+(load "~/programacion/emacs/vendor/nxhtml/autostart.el")
+
 ;; include ELPA if it exists
 (if (file-exists-p "~/.emacs.d/elpa/package.el")
     (load (expand-file-name "~/.emacs.d/elpa/package.el")))
