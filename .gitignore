@@ -1,5 +1,5 @@
 *.elc
 url/
-vendor/tumble
+vendor/tumble/*
 elpa/
 .DS_Store
