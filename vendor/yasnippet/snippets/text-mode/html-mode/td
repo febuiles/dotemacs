@@ -2,4 +2,4 @@
 #name : <td>...</td>
 #group : table
 # --
-<td$1>$2</td>
+<td>$1</td>

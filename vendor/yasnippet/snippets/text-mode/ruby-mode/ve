@@ -1,4 +1,3 @@
 #name : validates_exclusion_of : ... 
-#group: ActiveRecord
 # --
 validates_exclusion_of :${attr}

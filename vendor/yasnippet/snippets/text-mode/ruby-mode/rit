@@ -1,4 +1,3 @@
 #name : render :inline => " ... ", :type => : ... )
-#group: Rails render
 # --
 render :inline => "${<%= 'hello' %>}", :type => :${rxml})

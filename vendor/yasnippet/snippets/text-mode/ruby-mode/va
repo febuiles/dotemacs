@@ -1,4 +1,3 @@
 #name : validates_associated : ... 
-#group: ActiveRecord
 # --
 validates_associated :${attr}

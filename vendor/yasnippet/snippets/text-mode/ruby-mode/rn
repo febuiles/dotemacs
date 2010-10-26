@@ -1,4 +1,3 @@
 #name : render :nothing =>  ... 
-#group: Rails render
 # --
 render :nothing => ${true}

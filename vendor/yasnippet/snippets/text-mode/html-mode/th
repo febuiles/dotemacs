@@ -2,4 +2,4 @@
 #name : <th>...</th>
 #group : table
 # --
-<th$1>$2</th>
+<th>$1</th>

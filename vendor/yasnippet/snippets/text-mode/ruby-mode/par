@@ -1,4 +1,3 @@
 #name : params[: ... ]
-#group: Rails
 # --
 params[:${id}]
