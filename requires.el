@@ -7,8 +7,9 @@
 ;; ruby
 (require 'ri)
 (require 'ruby-electric)
-;;(require 'rinari)
+(require 'rinari)
 (require 'ruby-compilation)
+(require 'rhtml-mode)
 
 ;; shiny colors!
 (require 'color-theme)
