@@ -24,11 +24,11 @@
 
 (require 'haskell-site-file)
 
-
 ;; defunkt's stuff
 (require 'gist)
 (require 'textmate)
 (textmate-mode)
+(require 'coffee-mode)
 
 ;; ZenCoding
 (require 'zencoding-mode)
