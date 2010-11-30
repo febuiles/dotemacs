@@ -33,7 +33,7 @@
       c-tab-always-indent "other"
       browse-url-browser-function 'browse-default-macosx-browser
       make-backup-files nil
-      ispell-dictionary "english"
+      ispell-dictionary "espanol"
       markdown-command "Markdown.pl | SmartyPants.pl"
       standard-indent 4
       css-indent-offset 2
