@@ -2,7 +2,7 @@
 
 ;; Author: Christian Neukirchen <purl.org/net/chneukirchen>
 ;; Maintainer: Chris Wanstrath <chris@ozmm.org>
-;; Contributors: 
+;; Contributors:
 ;; Will Farrington <wcfarrington@gmail.com>
 ;; Michael Ivey
 ;; Phil Hagelberg
@@ -28,12 +28,12 @@
 ;; MA 02111-1307, USA.
 
 ;;; Commentary:
- 
+
 ;; Uses your local GitHub config if it can find it.
-;; See http://github.com/blog/180-local-github-config
+;; See https://github.com/blog/180-local-github-config
 
 ;;; Code:
- 
+
 (eval-when-compile (require 'cl))
 
 (defvar github-username "febuiles")
@@ -96,7 +96,7 @@ With a prefix argument, makes a private paste."
                ("file_ext[gistfile1]" . ,(concat "." ext))
                ("file_name[gistfile1]" . ,name)
                ("file_contents[gistfile1]" . ,(buffer-substring begin end))))))
-      (with-current-buffer (url-retrieve-synchronously "http://gist.github.com/gists")
+      (with-current-buffer (url-retrieve-synchronously "https://gist.github.com/gists")
         (re-search-backward "^Location: \\(.*\\)$")
         (message "Paste created: %s" (match-string 1))
         (if gist-view-gist (browse-url (match-string 1)))
@@ -188,7 +188,7 @@ Copies the URL into the kill ring."
       (gist-region-private (point) (mark))
       (mark-inactive (gist-buffer-private))))
 
-(defvar gist-fetch-url "http://gist.github.com/%d.txt"
+(defvar gist-fetch-url "https://gist.github.com/%d.txt"
   "Raw Gist content URL format")
 
 ;;;###autoload
