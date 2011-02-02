@@ -15,6 +15,9 @@
 (add-hook 'markdown-mode-hook 'flyspell-mode)
 (add-hook 'text-mode-hook 'flyspell-mode)
 
+(dolist (hook '(rhtml-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode -1))))
+
 ;; Use C-c k to kill emacs client sessions.
 (add-hook 'server-switch-hook
 	  (lambda ()
