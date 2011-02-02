@@ -7,7 +7,6 @@
 ;; ruby
 (require 'ri)
 (require 'ruby-electric)
-(require 'rinari)
 (require 'ruby-compilation)
 (require 'rhtml-mode)
 
