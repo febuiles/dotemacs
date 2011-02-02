@@ -1,7 +1,7 @@
 ;; use markdown-mode by default
 (setq initial-major-mode 'markdown-mode)
 
-(autoload 'js2-mode "js2" nil t)
+(autoload 'espresso-mode "espresso" nil t)
 
 ;; set some of the default major modes
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
@@ -23,4 +23,4 @@
 (add-to-list 'auto-mode-alist '("\\.treetop$" . treetop-mode))
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js$" . espresso-mode))

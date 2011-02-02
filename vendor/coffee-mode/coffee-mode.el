@@ -78,7 +78,7 @@
   :type 'boolean
   :group 'coffee-mode)
 
-(defcustom coffee-js-mode 'js2-mode
+(defcustom coffee-js-mode 'espresso-mode
   "The mode to use when viewing compiled JavaScript."
   :type 'string
   :group 'coffee)
