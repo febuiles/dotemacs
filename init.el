@@ -5,7 +5,7 @@
 (setq mac-allow-anti-aliasing t)
 
 ; interpret and use ansi color codes in shell output windows
-(ansi-color-for-comint-mode-on)
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 
 ;; use cmd as meta in Carbon Emacs
 (setq mac-command-modifier 'meta)
