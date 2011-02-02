@@ -3,3 +3,4 @@
 (setq auto-insert-directory "~/.emacs.d/templates/")
 (setq auto-insert-query nil)
 (define-auto-insert "\.html" "template.html")
+(define-auto-insert "\.c" "template.c")
