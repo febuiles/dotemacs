@@ -120,3 +120,6 @@ text))
                (regexp . "\\(\\s-*\\)#\\s-+=> [^#\t\n]")
                (repeat . nil)
                (modes  . '(ruby-mode))))
+
+;; mkdir
+(defalias 'mkdir 'make-directory)
