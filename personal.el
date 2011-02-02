@@ -97,3 +97,26 @@ text))
   (interactive)
   (let ((case-fold-search isearch-case-fold-search))
     (occur (if isearch-regexp isearch-string (regexp-quote isearch-string)))))
+
+;; align-regexp expressions for Ruby, upgraded to 1.9 from http://d.hatena.ne.jp/rubikitch/20080227/1204051280
+(require 'align)
+(add-to-list 'align-rules-list
+             '(ruby-comma-delimiter
+               (regexp . ",\\(\\s-*\\)[^# \t\n]")
+               (repeat . t)
+               (modes  . '(ruby-mode))))
+(add-to-list 'align-rules-list
+             '(ruby-hash-literal
+               (regexp . "\\(\\s-*\\)\\(=>\\|:\\)\\s-*[^# \t\n]")
+               (repeat . t)
+               (modes  . '(ruby-mode))))
+(add-to-list 'align-rules-list
+             '(ruby-assignment-literal
+               (regexp . "\\(\\s-*\\)=\\s-*[^# \t\n]")
+               (repeat . t)
+               (modes  . '(ruby-mode))))
+(add-to-list 'align-rules-list
+             '(ruby-xmpfilter-mark
+               (regexp . "\\(\\s-*\\)#\\s-+=> [^#\t\n]")
+               (repeat . nil)
+               (modes  . '(ruby-mode))))
