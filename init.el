@@ -33,7 +33,7 @@
       c-tab-always-indent "other"
       browse-url-browser-function 'browse-default-macosx-browser
       make-backup-files nil
-      ispell-dictionary "espanol"
+      ispell-dictionary "en"
       markdown-command "Markdown.pl | SmartyPants.pl"
       standard-indent 4
       css-indent-offset 2
@@ -68,20 +68,19 @@
 (let* ((files (directory-files "~/.emacs.d/vendor" t "[^\.+]")))
   (mapcar (lambda (d) (add-to-list 'load-path d)) files))
 
-;; include ELPA if it exists
-(if (file-exists-p "~/.emacs.d/elpa/package.el")
-    (load (expand-file-name "~/.emacs.d/elpa/package.el")))
-
 ;; load everything else
 (load "requires")
 (load "bindings")
 (load "personal")
 (load "modes")
 (load "hooks")
+(load "auto-insert")
 
 (load-file "~/.emacs.d/vendor/twilight/twilight.el")
 (color-theme-initialize)
 (color-theme-twilight)
+
+(setq toggle-mappings (toggle-style "rspec"))
 
 (custom-set-faces
   ;; custom-set-faces was added by Custom.

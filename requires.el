@@ -18,10 +18,8 @@
 ;; some useful modes
 (require 'markdown-mode)
 (require 'haml-mode)
-(require 'tumble)
-(require 'lyricwiki)
-
 (require 'haskell-site-file)
+(require 'toggle)
 
 ;; defunkt's stuff
 (require 'gist)
