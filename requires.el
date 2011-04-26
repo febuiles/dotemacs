@@ -18,8 +18,10 @@
 ;; some useful modes
 (require 'markdown-mode)
 (require 'haml-mode)
+(require 'sass-mode)
 (require 'haskell-site-file)
 (require 'toggle)
+(require 'espresso)
 
 ;; defunkt's stuff
 (require 'gist)

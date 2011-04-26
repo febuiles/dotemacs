@@ -439,7 +439,7 @@ with `\\\\_<' and `\\\\_>'."
   :tag "JavaScript - Espresso-Mode"
   :group 'languages)
 
-(defcustom espresso-indent-level 4
+(defcustom espresso-indent-level 2
   "Number of spaces for each indentation step."
   :type 'integer
   :group 'espresso)
