@@ -1,3 +1,4 @@
-# This was cloned from a TextMate bundle for yasnippet.
+# -*- mode: snippet -*-
+#name : flash
 # --
-flunk`snippet_paren.rb`"${0:Failure message.}"`snippet_paren.rb end`
+flash[:${1:$$(yas/choose-value '("error" "message" "notice" "warning"))}] = '$0'

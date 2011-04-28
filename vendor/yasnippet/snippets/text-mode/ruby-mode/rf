@@ -1,3 +1,6 @@
-#name : render :file => " ... "
+# -*- mode: snippet -*-
+#name : respond_to
 # --
-render :file => "${filepath}"
+respond_to do |${1:format}|
+  $0
+end

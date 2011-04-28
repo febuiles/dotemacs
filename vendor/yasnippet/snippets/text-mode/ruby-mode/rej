@@ -1,4 +1,4 @@
-#name : reject { |e| .. }
-#group : Enumerables
+# -*- mode: snippet -*-
+#name : reject
 # --
-reject { |${1:e}| $0 }
+reject { |${1:variable}| $0 }

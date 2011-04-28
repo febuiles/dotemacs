@@ -9,6 +9,8 @@
 (require 'ruby-electric)
 (require 'ruby-compilation)
 (require 'rhtml-mode)
+(require 'rvm)
+(require 'rspec-mode)
 
 ;; shiny colors!
 (require 'color-theme)

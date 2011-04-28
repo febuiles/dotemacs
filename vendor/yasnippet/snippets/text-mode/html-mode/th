@@ -1,5 +1,4 @@
-#contributor : Jimmy Wu <frozenthrone88@gmail.com>
-#name : <th>...</th>
-#group : table
+# -*- mode: snippet -*-
+#name : th
 # --
-<th>$1</th>
+<th>$0</th>

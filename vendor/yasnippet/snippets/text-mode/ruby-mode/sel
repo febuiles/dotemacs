@@ -1,4 +1,4 @@
-#name : select { |e| .. }
-#group : Enumerables
+# -*- mode: snippet -*-
+#name : select
 # --
-select { |${e}| $0 }
+select { |${1:variable}| $0$1 }

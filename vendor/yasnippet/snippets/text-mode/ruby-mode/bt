@@ -1,3 +1,4 @@
-#name : belongs_to : ... 
+# -*- mode: snippet -*-
+#name belongs_to
 # --
-belongs_to :${class}
+belongs_to :

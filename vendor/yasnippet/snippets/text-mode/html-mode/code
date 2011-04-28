@@ -1,5 +1,5 @@
-#contributor : Jimmy Wu <frozenthrone88@gmail.com>
-#name : <code>...</code>
+# -*- mode: snippet -*-
+#name : code
 # --
 <code>
   $0

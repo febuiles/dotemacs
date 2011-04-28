@@ -1,3 +1,4 @@
-#name : has_one : ... 
+# -*- mode: snippet -*-
+#name : has_one
 # --
-has_one :${class}
+has_one :

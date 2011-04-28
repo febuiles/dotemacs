@@ -1,4 +1,0 @@
-#contributor : Federico Builes <federico@mheroin.com>
-#name : <label for="...">...</label>
-# --
-<label for="$1">$2</label>

@@ -1,3 +1,4 @@
-#name : render :partial => " ... "
+# -*- mode: snippet -*-
+#name : render partial
 # --
-render :partial => "${item}"
+render :partial => $1

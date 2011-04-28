@@ -1,4 +1,4 @@
-#contributor : Jimmy Wu <frozenthrone88@gmail.com>
-#name : <title>...</title>
+# -*- mode: snippet -*-
+#name : title
 # --
-<title>$1</title>
+<title>$0</title>

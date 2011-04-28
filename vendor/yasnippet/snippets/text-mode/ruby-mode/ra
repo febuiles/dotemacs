@@ -1,3 +1,4 @@
-#name : render :action => " ... "
+# -*- mode: snippet -*-
+#name : read_attribute
 # --
-render :action => "${action}"
+read_attribute(:$1)

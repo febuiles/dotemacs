@@ -1,3 +1,4 @@
-#name : has_many : ... 
+# -*- mode: snippet -*-
+#name : has_many
 # --
-has_many :${class}
+has_many :

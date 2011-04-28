@@ -1,6 +1,0 @@
-#contributor : Federico Builes <federico@mheroin.com>
-#name : <select name="..."><option value="...">...</option></label>
-# --
-<select name="$1">
-  <option value="$2">$3</option>
-</select>
