@@ -104,6 +104,14 @@ text))
 ;; mkdir
 (defalias 'mkdir 'make-directory)
 
+;; fullscreen
+(defun toggle-fullscreen ()
+  "Toggle maximized frame"
+  (interactive)
+  (setq maxframe-maximized-p (not maxframe-maximized-p))
+  (cond (maxframe-maximized-p (maximize-frame))
+        (t (restore-frame))))
+
 ;; --------------------------------------------------------
 ;; nice little alternative visual bell by Miles Bader <miles /at/ gnu.org>
 (defcustom echo-area-bell-string ""
