@@ -37,7 +37,8 @@
       css-indent-offset 2
       transient-mark-mode t
       visible-bell nil
-      show-paren-delay 0)
+      show-paren-delay 0
+      ns-pop-up-frames nil)
 
 ;; nice parentheses
 (setq-default show-trailing-whitespace t)

@@ -5,7 +5,7 @@
 
 (global-set-key [f4] 'vc-print-log)
 (global-set-key [f5] 'compile)
-(global-set-key [f6] 'toggle-fullscreen)
+(global-set-key [f6] 'ns-toggle-fullscreen)
 
 ;; Git
 (global-set-key [(control x)(control g)] 'git-status)
