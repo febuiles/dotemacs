@@ -313,9 +313,6 @@
       (concat "--options " (rspec-spec-opts-file))
     (if default-options
         default-options)))
-rspec-core-options
-
-
 
 (defun rspec-spec-opts-file ()
   "Returns filename of spec opts file (usually spec/spec.opts)"
