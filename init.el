@@ -12,11 +12,10 @@
 
 ;; hide all the chrome.
 (setq inhibit-startup-message t)
-(menu-bar-mode nil)
-(tool-bar-mode nil)
+(menu-bar-mode 1)
+(tool-bar-mode -1)
 (scroll-bar-mode nil)
-
-(setq user-mail-address "federico.builes@gmail.com")
+(setq user-mail-address "federico@mheroin.com")
 (setq user-full-name "Federico Builes")
 
 ;; personal preferences
@@ -33,12 +32,11 @@
       c-tab-always-indent "other"
       browse-url-browser-function 'browse-default-macosx-browser
       make-backup-files nil
-      ispell-dictionary "en"
       markdown-command "Markdown.pl | SmartyPants.pl"
       standard-indent 4
       css-indent-offset 2
       transient-mark-mode t
-      visible-bell t
+      visible-bell nil
       show-paren-delay 0)
 
 ;; nice parentheses

@@ -12,11 +12,11 @@
 (add-hook 'sgml-mode-hook 'zencoding-mode)
 
 ;; Add automatic spelling to Markdown and Text modes.
-(add-hook 'markdown-mode-hook 'flyspell-mode)
-(add-hook 'text-mode-hook 'flyspell-mode)
+;;(add-hook 'markdown-mode-hook 'flyspell-mode)
+;;(add-hook 'text-mode-hook 'flyspell-mode)
 
-(dolist (hook '(rhtml-mode-hook))
-  (add-hook hook (lambda () (flyspell-mode -1))))
+;;(dolist (hook '(rhtml-mode-hook))
+;;  (add-hook hook (lambda () (flyspell-mode -1))))
 
 ;; Use C-c k to kill emacs client sessions.
 (add-hook 'server-switch-hook
