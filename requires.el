@@ -14,7 +14,6 @@
 ;; shiny colors!
 (require 'color-theme)
 (require 'color-theme-autoloads)
-(require 'zenburn)
 
 ;; some useful modes
 (require 'markdown-mode)
