@@ -41,6 +41,11 @@
   (lambda ()
     (set (make-local-variable 'compile-command) (concat "open " (buffer-name)))))
 
+;; Use `mdify` for Markdown documents compile-command.
+(add-hook 'markdown-mode-hook
+  (lambda ()
+    (set (make-local-variable 'compile-command) (concat "mdify " (buffer-name)))))
+
 ;; CoffeeScript mode
 (add-hook 'coffee-mode-hook
   '(lambda() (set (make-local-variable 'tab-width) 2)))
