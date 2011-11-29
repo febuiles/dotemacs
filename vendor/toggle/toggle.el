@@ -94,7 +94,7 @@
   :type '(repeat (cons string string)))
 
 (defcustom toggle-mapping-style
-  'ruby
+  'rspec
   "The default toggle mapping style to load when initialized."
   :group 'toggle
   :type '(symbol))
