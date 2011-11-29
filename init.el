@@ -9,6 +9,7 @@
 
 ;; use cmd as meta in Carbon Emacs
 (setq mac-command-modifier 'meta)
+(setq mac-option-modifier 'option)
 
 ;; hide all the chrome.
 (setq inhibit-startup-message t)
@@ -38,6 +39,7 @@
       transient-mark-mode t
       visible-bell nil
       show-paren-delay 0
+      comint-process-echoes t
       ns-pop-up-frames nil)
 
 ;; nice parentheses
@@ -79,7 +81,7 @@
 (color-theme-initialize)
 (color-theme-twilight)
 
-(setq toggle-mappings (toggle-style "rspec"))
+(setq toggle-mappings (toggle-style "rails"))
 
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
