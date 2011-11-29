@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+#name : ae
+# --
+assert_equal ${1:expected}, ${2:actual}
