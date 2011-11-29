@@ -1,8 +1,7 @@
 (global-set-key "\M-g" 'goto-line)
 (global-set-key "\M-4" 'query-replace)
-(global-set-key [f2] 'rspec-toggle-spec-and-target)
+(global-set-key [f2] 'toggle-buffer)
 (global-set-key [f3] 'shell)
-
 (global-set-key [f4] 'vc-print-log)
 (global-set-key [f5] 'compile)
 (global-set-key [f6] 'ns-toggle-fullscreen)

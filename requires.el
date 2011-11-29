@@ -40,3 +40,14 @@
 
 ;; autotest
 (require 'autotest)
+
+;; slime
+(require 'slime)
+(slime-setup)
+
+;; yaml
+(require 'yaml-mode)
+
+;; rvm
+(require 'rvm)
+(rvm-use-default)
