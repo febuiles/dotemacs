@@ -1,10 +1,10 @@
 ;;; rspec-mode.el --- Enhance ruby-mode for RSpec
 
-;; Copyright (C) 2008 Peter Williams <http://pezra.barelyenough.org>
+;; Copyright (C) 2008-2011 Peter Williams <http://barelyenough.org>
 ;; Authors: Peter Williams, et al.
 ;; URL: http://github.com/pezra/rspec-mode
-;; Created: 2008
-;; Version: 0.7
+;; Created: 2011
+;; Version: 1.3
 ;; Keywords: rspec ruby
 ;; Package-Requires: ((ruby-mode "1.1")
 ;;                    (mode-compile "2.29"))
@@ -57,7 +57,8 @@
 ;; command. Use the customization interface (customize-group
 ;; rspec-mode) or override using (setq rspec-use-rake-flag TVAL).
 ;;
-;; Options will be loaded from spec.opts if it exists, otherwise it
+;; Options will be loaded from spec.opts or .rspec if it exists and
+;; rspec-use-opts-file-when-available is not set to nil, otherwise it
 ;; will fallback to defaults.
 ;;
 ;; Dependencies
@@ -68,8 +69,13 @@
 ;; loaded so that rspec output is colorized properly.  If
 ;; `rspec-use-rvm` is set to true `rvm.el` is required.
 ;;
+
 ;;; Change Log:
 ;;
+;; 1.5 - Allow key prefix to be customized (`rspec-key-command-prefix`)
+;; 1.4 - Allow .rspec/spec.opts files to be ignored (`rspec-use-opts-file-when-available` customization)
+;; 1.3 - Bundler support (JD Huntington)
+;; 1.2 - Rspec2 compatibility  (Anantha Kumaran)
 ;; 1.1 - Run verification processes from project root directory (Joe Hirn)
 ;; 1.0 - Advance to end of compilation buffer even if it not the other window (byplayer)
 ;; 0.8 - RVM support (Peter Williams)
@@ -88,13 +94,17 @@
 
 (defconst rspec-mode-abbrev-table (make-abbrev-table))
 
-(defconst rspec-mode-keymap (make-sparse-keymap) "Keymap used in rspec mode")
+(define-prefix-command 'rspec-mode-verifible-keymap)
+(define-key rspec-mode-verifible-keymap (kbd "v") 'rspec-verify)
+(define-key rspec-mode-verifible-keymap (kbd "a") 'rspec-verify-all)
+(define-key rspec-mode-verifible-keymap (kbd "t") 'rspec-toggle-spec-and-target)
 
-(define-key rspec-mode-keymap (kbd "C-c ,v") 'rspec-verify)
-(define-key rspec-mode-keymap (kbd "C-c ,s") 'rspec-verify-single)
-(define-key rspec-mode-keymap (kbd "C-c ,a") 'rspec-verify-all)
-(define-key rspec-mode-keymap (kbd "C-c ,d") 'rspec-toggle-example-pendingness)
-(define-key rspec-mode-keymap (kbd "C-c ,t") 'rspec-toggle-spec-and-target)
+(define-prefix-command 'rspec-mode-keymap)
+(define-key rspec-mode-keymap (kbd "v") 'rspec-verify)
+(define-key rspec-mode-keymap (kbd "a") 'rspec-verify-all)
+(define-key rspec-mode-keymap (kbd "t") 'rspec-toggle-spec-and-target)
+(define-key rspec-mode-keymap (kbd "s") 'rspec-verify-single)
+(define-key rspec-mode-keymap (kbd "d") 'rspec-toggle-example-pendingness)
 
 (defgroup rspec-mode nil
   "Rspec minor mode.")
@@ -116,27 +126,47 @@
   :type 'string
   :group 'rspec-mode)
 
-(defcustom rspec-use-rvm nil
+(defcustom rspec-use-rvm t
   "t when RVM in is in use. (Requires rvm.el)"
   :type 'boolean
   :group 'rspec-mode)
+
+(defcustom rspec-use-bundler-when-possible nil
+  "t when rspec should be run with 'bundle exec' whenever possible. (Gemfile present)"
+  :type 'boolean
+  :group 'rspec-mode)
+
+(defcustom rspec-use-opts-file-when-available t
+  "t if rspec should use .rspec/spec.opts"
+  :type 'boolean
+  :group 'rspec-mode)
+
+(defcustom rspec-compilation-buffer-name "*compilation*"
+  "The compilation buffer name for spec"
+  :type 'string
+  :group 'rspec-mode)
+
+(defcustom rspec-key-command-prefix  (kbd "C-c ,")
+  "The prefix for all rspec related key commands"
+  :type 'string
+  :group 'rspec-mode)
+
+
 
 
 ;;;###autoload
 (define-minor-mode rspec-mode
   "Minor mode for rSpec files"
   :lighter " rSpec"
-  :keymap  rspec-mode-keymap)
+  (local-set-key rspec-key-command-prefix rspec-mode-keymap))
+
 
 
 (defvar rspec-imenu-generic-expression
   '(("Examples"  "^\\( *\\(it\\|describe\\|context\\) +.+\\)"          1))
   "The imenu regex to parse an outline of the rspec file")
 
-(defcustom rspec-compilation-buffer-name "*compilation*"
-  "The compilation buffer name for spec"
-  :type 'string
-  :group 'rspec-mode)
+
 
 (defun rspec-set-imenu-generic-expression ()
   (make-local-variable 'imenu-generic-expression)
@@ -219,7 +249,7 @@
 (defun rspec-verify-all ()
   "Runs the 'spec' rake task for the project of the current file."
   (interactive)
-  (rspec-run (rspec-core-options "--format=progress")))
+  (rspec-run (rspec-core-options)))
 
 (defun rspec-toggle-spec-and-target ()
   "Switches to the spec for the current buffer if it is a
@@ -305,24 +335,41 @@
 
 (defun rspec-spec-file-p (a-file-name)
   "Returns true if the specified file is a spec"
-  (string-match "\\(_\\|-\\)spec\\.rb$" a-file-name))
+  (numberp (string-match "\\(_\\|-\\)spec\\.rb$" a-file-name)))
 
 (defun rspec-core-options (&optional default-options)
-  "Returns string of options that instructs spec to use spec.opts file if it exists, or sensible defaults otherwise"
-  (if (file-readable-p (rspec-spec-opts-file))
-      (concat "--options " (rspec-spec-opts-file))
-    (if default-options
-        default-options)))
+  "Returns string of options that instructs spec to use options file if it exists, or sensible defaults otherwise"
+  (cond ((and rspec-use-opts-file-when-available
+              (file-readable-p (rspec-spec-opts-file)))
+         (concat "--options " (rspec-spec-opts-file)))
+        (t (or default-options
+            (rspec-default-options)))))
+
+(defun rspec-bundle-p ()
+  (and rspec-use-bundler-when-possible
+       (file-readable-p (concat (rspec-project-root) "Gemfile"))))
+
+(defun rspec2-p ()
+  (or (string-match "rspec" rspec-spec-command)
+      (file-readable-p (concat (rspec-project-root) ".rspec"))))
+
+(defun rspec-default-options ()
+  (if (rspec2-p)
+      "--format documentation"
+    (concat "--format specdoc " "--reverse")))
 
 (defun rspec-spec-opts-file ()
-  "Returns filename of spec opts file (usually spec/spec.opts)"
-  (concat (rspec-spec-directory (rspec-project-root)) "/spec.opts"))
+  "Returns filename of spec opts file"
+  (if (rspec2-p)
+      (expand-file-name ".rspec" (rspec-project-root))
+    (expand-file-name "spec.opts" (rspec-spec-directory (rspec-project-root)))))
 
 (defun rspec-runner ()
   "Returns command line to run rspec"
-  (if rspec-use-rake-flag
-      (concat rspec-rake-command " spec")
-    rspec-spec-command))
+  (let ((bundle-command (if (rspec-bundle-p) "bundle exec " "")))
+    (concat bundle-command (if rspec-use-rake-flag
+                               (concat rspec-rake-command " spec")
+                             rspec-spec-command))))
 
 (defun rspec-runner-options (&optional opts)
   "Returns string of options for command line"
@@ -375,10 +422,11 @@
 
 (defun rspec-compile (a-file-or-dir &optional opts)
   "Runs a compile for the specified file or diretory with the specified opts"
-  (global-set-key (kbd "C-c ,r")
-                  (eval `(lambda () (interactive)
-                           (rspec-from-direcory ,default-directory
-                                                (rspec-compile ,a-file-or-dir (quote ,opts))))))
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "r") (eval `(lambda () (interactive)
+                                       (rspec-from-direcory ,default-directory
+                                                            (rspec-compile ,a-file-or-dir (quote ,opts))))))
+    (global-set-key rspec-key-command-prefix map))
 
   (if rspec-use-rvm
       (rvm-activate-corresponding-ruby))
@@ -417,25 +465,14 @@
 (eval-after-load 'ruby-mode
   '(add-hook 'ruby-mode-hook
              (lambda ()
-               (local-set-key (kbd "C-c ,v") 'rspec-verify)
-               (local-set-key (kbd "C-c ,a") 'rspec-verify-all)
-               (local-set-key (kbd "C-c ,t") 'rspec-toggle-spec-and-target))))
+               (local-set-key rspec-key-command-prefix rspec-mode-verifible-keymap))))
 
 ;; Add verify related spec keybinding to ruby ruby modes
 ;;;###autoload
 (eval-after-load 'rails
   '(add-hook 'rails-minor-mode-hook
              (lambda ()
-               (local-set-key (kbd "C-c ,v") 'rspec-verify)
-               (local-set-key (kbd "C-c ,a") 'rspec-verify-all)
-               (local-set-key (kbd "C-c ,t") 'rspec-toggle-spec-and-target))))
-
-;; This hook makes any abbreviation that are defined in
-;; rspec-mode-abbrev-table available in rSpec buffers
-(add-hook 'rspec-mode-hook
-          (lambda ()
-            (merge-abbrev-tables rspec-mode-abbrev-table
-                                 local-abbrev-table)))
+               (local-set-key rspec-key-command-prefix rspec-mode-verifible-keymap))))
 
 ;; abbrev
 ;; from http://www.opensource.apple.com/darwinsource/Current/emacs-59/emacs/lisp/derived.el
@@ -456,10 +493,11 @@ as the value of the symbol, and the hook as the function definition."
              t)))
      old)))
 
-
-(add-to-list 'compilation-error-regexp-alist-alist
-	     '(rspec "\\([0-9A-Za-z_./\:-]+\\.rb\\):\\([0-9]+\\)" 1 2))
-(add-to-list 'compilation-error-regexp-alist 'rspec)
+(add-hook 'compilation-mode-hook
+          (lambda ()
+            (add-to-list 'compilation-error-regexp-alist-alist
+                         '(rspec "\\([0-9A-Za-z_./\:-]+\\.rb\\):\\([0-9]+\\)" 1 2))
+            (add-to-list 'compilation-error-regexp-alist 'rspec)))
 
 (condition-case nil
     (progn
