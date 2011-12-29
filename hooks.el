@@ -1,7 +1,8 @@
 ;; Generic hooks
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
-(add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode)))
+(add-hook 'ruby-mode-hook (lambda () (ruby-electric-mode)))
+(add-hook 'ruby-mode-hook (lambda () (rvm-activate-corresponding-ruby)))
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'c++-mode-hook 'turn-on-auto-fill)
 (add-hook 'c-mode-hook 'turn-on-auto-fill)
@@ -12,11 +13,8 @@
 (add-hook 'sgml-mode-hook 'zencoding-mode)
 
 ;; Add automatic spelling to Markdown and Text modes.
-;;(add-hook 'markdown-mode-hook 'flyspell-mode)
-;;(add-hook 'text-mode-hook 'flyspell-mode)
-
-;;(dolist (hook '(rhtml-mode-hook))
-;;  (add-hook hook (lambda () (flyspell-mode -1))))
+(add-hook 'markdown-mode-hook 'flyspell-mode)
+(add-hook 'text-mode-hook 'flyspell-mode)
 
 ;; Use C-c k to kill emacs client sessions.
 (add-hook 'server-switch-hook
