@@ -183,3 +183,30 @@ text))
       (narrow-to-region start end)
       (goto-char (point-min))
       (print (count-matches "\\sw+")))))
+
+
+;; Run fast spec files before going for the typical Rails specs.
+(defun fast-spec-file(file)
+  (gsub (gsub  file "app/" "spec/fast/") ".rb" "_spec.rb"))
+
+(defun run-spec()
+  "Runs the specs for the buffer where this is called.
+The spec lookup works like this:
+1. For foo.rb it'll look for spec/fast/[models|controllers|...]/foo_spec.rb
+2. If (1) fails it will run `rspec-verify`."
+  (interactive)
+  (let* ((file-name (buffer-file-name))
+        (fast-spec (fast-spec-file file-name)))
+    (if
+        (file-exists-p fast-spec) (rspec-run-single-file fast-spec)
+       (rspec-verify))))
+
+(defun gsub (string search-string replace &optional regexp-flag)
+  "Replaces the occurences of `search-string` in `string` with `replace`."
+  (with-temp-buffer
+    (insert string)
+    (goto-char (point-min))
+    (let ((search-function (if regexp-flag 're-search-forward 'search-forward)))
+      (while (funcall search-function search-string nil t)
+        (replace-match replace))
+      (buffer-string))))
