@@ -39,7 +39,6 @@
       transient-mark-mode t
       visible-bell nil
       show-paren-delay 0
-      comint-process-echoes t
       ns-pop-up-frames nil)
 
 ;; nice parentheses
