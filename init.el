@@ -39,6 +39,7 @@
       transient-mark-mode t
       visible-bell nil
       show-paren-delay 0
+      whitespace-style '(face empty tabs lines-tail)
       ns-pop-up-frames nil)
 
 ;; nice parentheses
@@ -59,7 +60,7 @@
 
 ;; use a nice font by default
 (set-default-font "-apple-inconsolata-medium-r-normal--0-0-0-0-m-0-iso10646-1")
-(set-face-attribute 'default (selected-frame) :height 180)
+(set-face-attribute 'default nil :height 220)
 
 ;; add ~/.emacs.d to the load path
 (add-to-list 'load-path "~/.emacs.d")

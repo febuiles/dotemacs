@@ -30,24 +30,23 @@
 (require 'coffee-mode)
 (require 'peepopen)
 
-;; ZenCoding
 (require 'zencoding-mode)
 
-;; Yasnippet
+;; Snippets
 (require 'yasnippet)
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/vendor/yasnippet/snippets")
 
-;; autotest
 (require 'autotest)
 
-;; slime
 (require 'slime)
 (slime-setup)
 
-;; yaml
 (require 'yaml-mode)
 
-;; rvm
 (require 'rvm)
 (rvm-use-default)
+
+;; mark whitespace
+(require 'whitespace)
+(global-whitespace-mode t)
