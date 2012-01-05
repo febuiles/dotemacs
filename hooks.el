@@ -12,10 +12,6 @@
 ;; Use ZenCoding for all markup modes
 (add-hook 'sgml-mode-hook 'zencoding-mode)
 
-;; Add automatic spelling to Markdown and Text modes.
-(add-hook 'markdown-mode-hook 'flyspell-mode)
-(add-hook 'text-mode-hook 'flyspell-mode)
-
 ;; Use C-c k to kill emacs client sessions.
 (add-hook 'server-switch-hook
 	  (lambda ()
