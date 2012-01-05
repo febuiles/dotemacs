@@ -210,3 +210,11 @@ The spec lookup works like this:
       (while (funcall search-function search-string nil t)
         (replace-match replace))
       (buffer-string))))
+
+;; Lyrics
+(defun lyrics()
+  "Prints the lyrics for the current song"
+  (interactive)
+  (switch-to-buffer (create-file-buffer "Lyrics"))
+  (insert  (shell-command-to-string "/usr/local/bin/lyrics"))
+  (goto-line 0))
