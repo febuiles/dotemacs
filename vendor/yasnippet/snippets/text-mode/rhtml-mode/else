@@ -1,5 +1,5 @@
 # -*- mode: yasnippet -*-
-#name : if
+#name : else
 #group : Conditions
 # --
-<% if %>
+<% else %>
