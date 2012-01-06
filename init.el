@@ -39,7 +39,6 @@
       transient-mark-mode t
       visible-bell nil
       show-paren-delay 0
-      whitespace-style '(face empty tabs lines-tail)
       ns-pop-up-frames nil)
 
 ;; nice parentheses

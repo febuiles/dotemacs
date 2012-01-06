@@ -46,7 +46,3 @@
 
 (require 'rvm)
 (rvm-use-default)
-
-;; mark whitespace
-(require 'whitespace)
-(global-whitespace-mode t)
