@@ -22,6 +22,7 @@
 (global-set-key "\C-r" 'isearch-backward-regexp)
 (global-set-key "\C-\M-s" 'isearch-forward)
 (global-set-key "\C-\M-r" 'isearch-backward)
+(global-set-key (kbd "C-x C-t") 'org-todo)
 
 ;; Ruby bindings
 (define-key ruby-mode-map (kbd "C-c C-l") 'rinari-find-controller)
