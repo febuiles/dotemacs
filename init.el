@@ -74,6 +74,7 @@
 (load "personal")
 (load "modes")
 (load "hooks")
+(load "rails")
 (load "auto-insert")
 
 (load-file "~/.emacs.d/vendor/twilight/twilight.el")
@@ -99,3 +100,4 @@
  '(rspec-spec-command "rspec")
  '(rspec-use-rake-flag nil)
  '(rspec-use-rvm nil))
+(put 'downcase-region 'disabled nil)
