@@ -27,6 +27,8 @@
 (show-paren-mode 1)
 (prefer-coding-system 'utf-8)
 (setq case-fold-search t
+      display-time-day-and-date t
+      display-time-24hr-format t
       search-highlight t
       query-replace-highlight t
       default-fill-column 100
@@ -40,6 +42,9 @@
       visible-bell nil
       show-paren-delay 0
       ns-pop-up-frames nil)
+
+;; hour/day in mode line
+(display-time)
 
 ;; nice parentheses
 (setq-default show-trailing-whitespace t)
