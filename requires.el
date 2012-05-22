@@ -24,12 +24,11 @@
 (require 'espresso)
 
 ;; defunkt's stuff
-(require 'gist)
 (require 'textmate)
 (textmate-mode)
 (require 'coffee-mode)
-(require 'peepopen)
 
+(require 'peepopen)
 (require 'zencoding-mode)
 
 ;; Snippets
