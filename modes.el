@@ -27,3 +27,8 @@
 (add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.ejs$" . rhtml-mode))
+(add-to-list 'auto-mode-alist '("\\.text.erb$" . rhtml-mode))
+(add-to-list 'auto-mode-alist '("\\.html.liquid$" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.liquid$" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
+
