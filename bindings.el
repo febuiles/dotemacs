@@ -38,8 +38,7 @@
 
 ;; Spelling
 (global-set-key "\C-c\C-w" 'ispell-word)
-
-; C-. for auto-replace word in flyspell mode.
+(global-set-key "\C-c\C-d" 'word-definition)
 
 ;; Align
 (global-set-key "\C-x\C-a" 'align-regexp)

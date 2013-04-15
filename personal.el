@@ -218,3 +218,7 @@ The spec lookup works like this:
   (switch-to-buffer (create-file-buffer "Lyrics"))
   (insert  (shell-command-to-string "/usr/local/bin/lyrics"))
   (goto-line 0))
+
+(defun word-definition()
+  (interactive)
+  (shell-command-to-string (concat "open dict:///" (current-word))))
