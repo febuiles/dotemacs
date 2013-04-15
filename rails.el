@@ -14,3 +14,8 @@
 (defun schema ()
   (interactive)
   (find-file (concat (find-rails-root) "/db/schema.rb")))
+
+(defun gemfile ()
+  (interactive)
+  (find-file (concat (find-rails-root) "/Gemfile")))
+
