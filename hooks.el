@@ -46,3 +46,5 @@
 
 ;; colors in shells
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+(add-hook 'shell-mode-hook 'dirtrack-mode)
+(dirtrack-mode)
