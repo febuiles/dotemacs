@@ -46,9 +46,3 @@
 
 ;; colors in shells
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-
-;; fix directory tracking
-(add-hook 'shell-mode-hook 'dirtrack-mode)
-(dirtrack-mode)
-(setq-default dirtrack-list '("\\s-\\(\033\\[[0-9]+m\\)\\([^\033\\(]+\\)" 2 1))
-
