@@ -46,7 +46,7 @@
 ;; hour/day in mode line
 (display-time)
 
-;; nice parentheses
+;; see if you're working with assholes.
 (setq-default show-trailing-whitespace t)
 
 (show-paren-mode t)
