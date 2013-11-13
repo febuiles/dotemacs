@@ -6,6 +6,7 @@
 (global-set-key [f5] 'compile)
 (global-set-key [f6] 'ns-toggle-fullscreen)
 (global-set-key [f8] 'lyrics)
+(global-set-key [f10] 'fill-paragraph)
 
 ;; Git
 (global-set-key [(control x)(control g)] 'git-status)

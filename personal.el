@@ -215,9 +215,12 @@ The spec lookup works like this:
 (defun lyrics()
   "Prints the lyrics for the current song"
   (interactive)
-  (switch-to-buffer (create-file-buffer "Lyrics"))
-  (insert  (shell-command-to-string "/usr/local/bin/lyrics"))
-  (goto-line 0))
+  (let ((song (shell-command-to-string "/usr/local/bin/lyrics")))
+    (if (equal song "")
+        (message "No lyrics - Opening browser.")
+      (switch-to-buffer (create-file-buffer "Lyrics"))
+      (insert song)
+      (goto-line 0))))
 
 (defun word-definition()
   (interactive)
