@@ -46,3 +46,6 @@
 
 ;; Occur
 (define-key isearch-mode-map (kbd "C-o") 'isearch-occur)
+
+;; Global
+(global-set-key [(control tab)] 'indent-region)
