@@ -147,40 +147,6 @@ text))
 
 (setq ring-bell-function 'echo-area-bell)
 
-(setq inferior-lisp-program "/usr/local/bin/sbcl")
-
-
-;; Slime stuff
-
-;; Common Lisp Mode
-(setq inferior-lisp-program "/usr/local/bin/sbcl")
-(add-to-list 'auto-mode-alist '("\\.lisp$" . lisp-mode))
-(add-to-list 'auto-mode-alist '("\\.cl$" . lisp-mode))
-(add-to-list 'auto-mode-alist '("\\.asd$" . lisp-mode))
-(eval-after-load "slime"
- '(progn
-    (setq slime-complete-symbol*-fancy t
-          slime-complete-symbol-function 'slime-fuzzy-complete-symbol
-          slime-when-complete-filename-expand t
-          slime-truncate-lines nil
-          slime-autodoc-use-multiline-p t)
-    (slime-setup '(slime-fancy slime-asdf))
-    (define-key slime-repl-mode-map (kbd "C-c ;")
-      'slime-insert-balanced-comments)
-    (define-key slime-repl-mode-map (kbd "C-c M-;")
-      'slime-remove-balanced-comments)
-    (define-key slime-mode-map (kbd "C-c ;")
-      'slime-insert-balanced-comments)
-    (define-key slime-mode-map (kbd "C-c M-;")
-      'slime-remove-balanced-comments)
-    (define-key slime-mode-map (kbd "RET") 'newline-and-indent)
-    (define-key slime-mode-map (kbd "C-j") 'newline)))
-(add-hook 'lisp-mode-hook (lambda ()
-                           (cond ((not (featurep 'slime))
-                                  (require 'slime)
-                                  (normal-mode)))
-                           ))
-
 ;; WC for emacs
 ;; taken from http://www.emacswiki.org/emacs/WordCount
 (defun count-words (start end)
