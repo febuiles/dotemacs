@@ -15,7 +15,8 @@
 (setq inhibit-startup-message t)
 (menu-bar-mode 1)
 (tool-bar-mode -1)
-(scroll-bar-mode nil)
+(scroll-bar-mode -1)
+
 (setq user-mail-address "federico@mheroin.com")
 (setq user-full-name "Federico Builes")
 
@@ -63,7 +64,8 @@
 (server-start)
 
 ;; use a nice font by default
-(set-default-font "-apple-inconsolata-medium-r-normal--0-0-0-0-m-0-iso10646-1")
+(set-default-font "-unknown-Inconsolata-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
+
 (set-face-attribute 'default nil :height 220)
 
 ;; add ~/.emacs.d to the load path
@@ -106,16 +108,3 @@
  '(rspec-use-rake-flag nil)
  '(rspec-use-rvm nil))
 (put 'downcase-region 'disabled nil)
-
-
-;;; This was installed by package-install.el.
-;;; This provides support for the package system and
-;;; interfacing with ELPA, the package archive.
-;;; Move this code earlier if you want to reference
-;;; packages in your .emacs.
-(when
-    (load
-     (expand-file-name "~/.emacs.d/elpa/package.el"))
-  (add-to-list 'package-archives
-               '("marmalade" . "http://marmalade-repo.org/packages/"))
-  (package-initialize))

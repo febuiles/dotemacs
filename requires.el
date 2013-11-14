@@ -26,20 +26,17 @@
 (require 'wrap-region)
 (wrap-region-global-mode t)
 
-(require 'textmate)
-(textmate-mode)
 (require 'coffee-mode)
 
-(require 'peepopen)
 (require 'zencoding-mode)
 
 (require 'yasnippet)
-(yas/initialize)
 (yas/load-directory "~/.emacs.d/vendor/yasnippet/snippets")
-
-(require 'slime)
-(slime-setup)
 
 (require 'rvm)
 (rvm-use-default)
 
+(require 'command-t)
+
+(require 'ido)
+(ido-mode 1)
