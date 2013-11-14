@@ -62,22 +62,22 @@
 	   (concat "http://" url))))
     (start-process (concat "open " url) nil "open" url)))
 
-;; === Fix the "copy-paste from MS Word" issue on Mac OS X ===
-;; prohibit pasting of TIFFs
-(defun x-selection-value (type)
- (let ((data-types '(public.file-url
-                      public.utf16-plain-text
-                      com.apple.traditional-mac-plain-text))
-   text)
-   (while (and (null text) data-types)
-     (setq text (condition-case nil
-            (x-get-selection type (car data-types))
-          (error nil)))
-     (setq data-types (cdr data-types)))
-   (if text
-   (remove-text-properties 0 (length text) '(foreign-selection nil)
-text))
-   text))
+;; ;; === Fix the "copy-paste from MS Word" issue on Mac OS X ===
+;; ;; prohibit pasting of TIFFs
+;; (defun x-selection-value (type)
+;;  (let ((data-types '(public.file-url
+;;                       public.utf16-plain-text
+;;                       com.apple.traditional-mac-plain-text))
+;;    text)
+;;    (while (and (null text) data-types)
+;;      (setq text (condition-case nil
+;;             (x-get-selection type (car data-types))
+;;           (error nil)))
+;;      (setq data-types (cdr data-types)))
+;;    (if text
+;;    (remove-text-properties 0 (length text) '(foreign-selection nil)
+;; text))
+;;    text))
 
 ;; Alex Schroeder [http://www.emacswiki.org/cgi-bin/wiki/OccurBuffer]
 (defun isearch-occur ()
