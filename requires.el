@@ -31,12 +31,14 @@
 (require 'zencoding-mode)
 
 (require 'yasnippet)
-(yas/load-directory "~/.emacs.d/vendor/yasnippet/snippets")
+(setq yas-snippet-dirs '("~/.emacs.d/vendor/yasnippet/snippets"))
+(yas-global-mode 1)
+
 
 (require 'rvm)
 (rvm-use-default)
 
 (require 'command-t)
 
-;;(require 'ido)
-;;(ido-mode 1)
+(require 'ido)
+(ido-mode 1)
