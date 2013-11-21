@@ -46,3 +46,11 @@
 
 ;; colors in shells
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+;; ido-mode
+(defun ido-keybindings ()
+  "Add my keybindings for ido."
+  (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
+  (define-key ido-completion-map (kbd "C-p") 'ido-prev-match))
+
+(add-hook 'ido-setup-hook 'ido-my-keys)

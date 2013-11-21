@@ -38,5 +38,5 @@
 
 (require 'command-t)
 
-(require 'ido)
-(ido-mode 1)
+;;(require 'ido)
+;;(ido-mode 1)
