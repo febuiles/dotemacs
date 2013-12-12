@@ -30,5 +30,5 @@
 (add-to-list 'auto-mode-alist '("\\.text.erb$" . rhtml-mode))
 (add-to-list 'auto-mode-alist '("\\.html.liquid$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.liquid$" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.cs$" . csharp-mode))
 (add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
-
