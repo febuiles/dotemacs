@@ -16,6 +16,7 @@
 (menu-bar-mode 1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(setq ns-use-native-fullscreen nil)
 
 (setq user-mail-address "federico@mheroin.com")
 (setq user-full-name "Federico Builes")
@@ -66,7 +67,7 @@
 ;; use a nice font by default
 (set-default-font "-unknown-Inconsolata-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
 
-(set-face-attribute 'default nil :height 220)
+(set-face-attribute 'default nil :height 260)
 
 ;; add ~/.emacs.d to the load path
 (add-to-list 'load-path "~/.emacs.d")

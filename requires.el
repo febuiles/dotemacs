@@ -35,8 +35,3 @@
 
 (require 'rvm)
 (rvm-use-default)
-
-(require 'command-t)
-
-(require 'ido)
-(ido-mode 1)
