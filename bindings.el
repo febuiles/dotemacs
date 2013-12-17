@@ -49,3 +49,5 @@
 
 ;; Global
 (global-set-key [(control tab)] 'indent-region)
+
+(global-set-key [(meta t)] 'peepopen-goto-file-gui)

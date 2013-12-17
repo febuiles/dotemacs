@@ -1,6 +1,6 @@
 ;; git
 (require 'vc-git)
- (when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))
+(when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))
 (require 'git)
 (require 'git-blame)
 
@@ -35,3 +35,7 @@
 
 (require 'rvm)
 (rvm-use-default)
+
+(require 'textmate)
+(require 'peepopen)
+(textmate-mode)

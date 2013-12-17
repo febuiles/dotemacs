@@ -85,9 +85,11 @@
 (load "rails")
 (load "auto-insert")
 
-(load-file "~/.emacs.d/vendor/twilight/twilight.el")
+;; (load-file "~/.emacs.d/vendor/twilight/twilight.el")
+(load-file "~/.emacs.d/vendor/tomorrow-night/color-theme-tomorrow.el")
 (color-theme-initialize)
-(color-theme-twilight)
+;; (color-theme-twilight)
+(color-theme-tomorrow-night)
 
 (setq toggle-mappings (toggle-style "rails"))
 
