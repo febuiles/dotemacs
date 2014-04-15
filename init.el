@@ -91,6 +91,10 @@
 ;; (color-theme-twilight)
 (color-theme-tomorrow-night)
 
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+
 (setq toggle-mappings (toggle-style "rails"))
 
 (custom-set-faces

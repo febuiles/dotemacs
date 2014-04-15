@@ -5,7 +5,7 @@
 (require 'git-blame)
 
 (require 'ri)
-(require 'ruby-electric)
+;;(require 'ruby-electric)
 (require 'ruby-compilation)
 (require 'rhtml-mode)
 (require 'rspec-mode)
