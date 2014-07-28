@@ -32,6 +32,7 @@
 
 (require 'yasnippet)
 (yas/load-directory "~/.emacs.d/vendor/yasnippet/snippets")
+(yas/global-mode 1)
 
 (require 'rvm)
 (rvm-use-default)

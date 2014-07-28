@@ -98,20 +98,24 @@
 (setq toggle-mappings (toggle-style "rails"))
 
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(mumamo-background-chunk-major ((((class color) (min-colors 88) (background dark)) nil)))
  '(mumamo-background-chunk-submode1 ((((class color) (min-colors 88) (background dark)) nil)))
  '(mumamo-background-chunk-submode2 ((((class color) (min-colors 88) (background dark)) nil)))
  '(mumamo-background-chunk-submode3 ((((class color) (min-colors 88) (background dark)) nil))))
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(rspec-spec-command "rspec")
  '(rspec-use-rake-flag nil)
- '(rspec-use-rvm nil))
+ '(rspec-use-rvm nil)
+ '(ruby-electric-keywords-alist (quote (("begin" . reindent) ("case" . reindent) ("class" . end) ("def" . end) ("do" . reindent) ("else" . reindent) ("elsif" . reindent) ("end" . reindent) ("ensure" . reindent) ("for" . reindent) ("if" . end) ("module" . end) ("rescue" . reindent) ("unless" . reindent) ("until" . reindent) ("when" . reindent) ("while" . reindent))))
+ '(send-mail-function (quote smtpmail-send-it))
+ '(smtpmail-smtp-server "smtp.gmail.com")
+ '(smtpmail-smtp-service 25))
 (put 'downcase-region 'disabled nil)
