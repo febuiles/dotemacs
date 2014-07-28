@@ -5,9 +5,9 @@
 ;; ***** BEGIN LICENSE BLOCK *****
 ;; Version: MPL 1.1/GPL 2.0/LGPL 2.1
 
-;; The contents of this file are subject to the Mozilla Public License Version 
-;; 1.1 (the "License"); you may not use this file except in compliance with 
-;; the License. You may obtain a copy of the License at 
+;; The contents of this file are subject to the Mozilla Public License Version
+;; 1.1 (the "License"); you may not use this file except in compliance with
+;; the License. You may obtain a copy of the License at
 ;; http://www.mozilla.org/MPL/
 
 ;; Software distributed under the License is distributed on an "AS IS" basis,
@@ -100,7 +100,7 @@ I don't think this has any restrictions.")
 
 (defun rhtml-erb-delim-type (start-delim)
   "Return `exec', `out', `comment' or nil dependin on the type of delimeter this is."
-  (flet ((match? (regex)
+  (cl-flet ((match? (regex)
                  (eq (string-match regex start-delim) 0)))
     (cond ((match? rhtml-erb-exec-tag-open-re)
            'exec)

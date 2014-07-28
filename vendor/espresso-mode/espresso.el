@@ -1843,7 +1843,7 @@ returns nil."
   ;; FIXME: filling a single-line C-style comment into multiple lines
   ;; does something horrible to the undo list
 
-  (flet ((c-forward-sws
+  (cl-flet ((c-forward-sws
           (&optional limit)
           (espresso--forward-syntactic-ws limit))
 
@@ -3003,7 +3003,7 @@ to a ChromeWindow or a browser, respectively."
                       do (setq cname (format "%s <%d>" cname num))
                       collect (cons cname tab)))
 
-     (labels ((find-tab-by-cname
+     (cl-labels ((find-tab-by-cname
                (cname)
                (loop for tab in tabs
                      if (equal (car tab) cname)
