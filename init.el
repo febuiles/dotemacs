@@ -4,7 +4,7 @@
 ;; nice fonts in OS X
 (setq mac-allow-anti-aliasing t)
 
-; interpret and use ansi color codes in shell output windows
+;; interpret and use ansi color codes in shell output windows
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 
 ;; use cmd as meta in Carbon Emacs
@@ -85,10 +85,8 @@
 (load "rails")
 (load "auto-insert")
 
-;; (load-file "~/.emacs.d/vendor/twilight/twilight.el")
 (load-file "~/.emacs.d/vendor/tomorrow-night/color-theme-tomorrow.el")
 (color-theme-initialize)
-;; (color-theme-twilight)
 (color-theme-tomorrow-night)
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
@@ -114,8 +112,4 @@
  '(rspec-spec-command "rspec")
  '(rspec-use-rake-flag nil)
  '(rspec-use-rvm nil)
- '(ruby-electric-keywords-alist (quote (("begin" . reindent) ("case" . reindent) ("class" . end) ("def" . end) ("do" . reindent) ("else" . reindent) ("elsif" . reindent) ("end" . reindent) ("ensure" . reindent) ("for" . reindent) ("if" . end) ("module" . end) ("rescue" . reindent) ("unless" . reindent) ("until" . reindent) ("when" . reindent) ("while" . reindent))))
- '(send-mail-function (quote smtpmail-send-it))
- '(smtpmail-smtp-server "smtp.gmail.com")
- '(smtpmail-smtp-service 25))
-(put 'downcase-region 'disabled nil)
+ '(ruby-electric-keywords-alist (quote (("begin" . reindent) ("case" . reindent) ("class" . end) ("def" . end) ("do" . reindent) ("else" . reindent) ("elsif" . reindent) ("end" . reindent) ("ensure" . reindent) ("for" . reindent) ("if" . end) ("module" . end) ("rescue" . reindent) ("unless" . reindent) ("until" . reindent) ("when" . reindent) ("while" . reindent)))))
