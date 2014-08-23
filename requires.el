@@ -1,11 +1,9 @@
-;; git
 (require 'vc-git)
 (when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))
 (require 'git)
 (require 'git-blame)
 
 (require 'ri)
-;;(require 'ruby-electric)
 (require 'ruby-compilation)
 (require 'rhtml-mode)
 (require 'rspec-mode)
@@ -40,3 +38,6 @@
 (require 'textmate)
 (require 'peepopen)
 (textmate-mode)
+
+(require 'dirtrack)
+(setq-default dirtrack-list '("\\s-\\(\033\\[[0-9]+m\\)\\([^\033\\(]+\\)" 2 1))
