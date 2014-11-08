@@ -15,6 +15,7 @@
 (global-set-key [(meta -)] 'font-smaller)
 (global-set-key [(meta \+)] 'font-larger)
 
+
 ;; C-1 opens a temporary buffer 'foo'
 (global-set-key [(control \1)]
   (lambda () (interactive) (switch-to-buffer "foo")))
@@ -46,6 +47,9 @@
 
 ;; Occur
 (define-key isearch-mode-map (kbd "C-o") 'isearch-occur)
+
+;; Textmate mode
+(global-set-key "\M-T" 'textmate-goto-symbol)
 
 ;; Global
 (global-set-key [(control tab)] 'indent-region)
