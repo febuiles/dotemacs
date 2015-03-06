@@ -142,13 +142,26 @@
   "Runs the specs for the buffer where this is called.
 The spec lookup works like this:
 1. For foo.rb it'll look for spec/fast/[models|controllers|...]/foo_spec.rb
-2. If (1) fails it will run `rspec-verify`."
+2. If (1) fails it will run `rspec-verify-single`."
   (interactive)
   (let* ((file-name (buffer-file-name))
         (fast-spec (fast-spec-file file-name)))
     (if
         (file-exists-p fast-spec) (rspec-run-single-file fast-spec)
-       (rspec-verify))))
+       (rspec-verify-single))))
+
+(defun get-current-test-name ()
+  (save-excursion
+    (let ((pos)
+          (test-name))
+      (re-search-backward "test \"\\([^\"]+\\)\" do")
+      (setq test-name (buffer-substring-no-properties (match-beginning 1) (match-end 1)))
+      (concat "test_" (replace-regexp-in-string " " "_" test-name)))))
+
+;; Equivalent to `run-spec` for Minitest. TODO: Merge.
+(defun ruby-run-test-at-point ()
+  (interactive)
+  (compile (format "ruby -Ilib:test -I../. %s -n %s" (expand-file-name (buffer-file-name)) (get-current-test-name))))
 
 (defun gsub (string search-string replace &optional regexp-flag)
   "Replaces the occurences of `search-string` in `string` with `replace`."
