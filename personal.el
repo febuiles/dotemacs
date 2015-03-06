@@ -184,10 +184,15 @@ The spec lookup works like this:
       (insert song)
       (goto-line 0))))
 
+;; look for the current word in the dictionary
 (defun word-definition()
   (interactive)
   (shell-command-to-string (concat "open dict:///" (current-word))))
 
+;; got too used to using git-blame-mode (don't!)
+(defalias 'git-blame-mode 'vc-annotate )
+
+;; fast-load ~/.alias
 (defun alias ()
   (interactive)
   (find-file "~/.alias"))
