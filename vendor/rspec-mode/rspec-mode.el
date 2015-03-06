@@ -244,7 +244,10 @@
 (defun rspec-verify-single ()
   "Runs the specified example at the point of the current buffer."
   (interactive)
-  (rspec-run-single-file (rspec-spec-file-for (buffer-file-name)) (rspec-core-options ()) (concat "--line " (number-to-string (line-number-at-pos)))))
+  (rspec-run-single-file (concat
+                          (rspec-spec-file-for (buffer-file-name))
+                          ":" (number-to-string (line-number-at-pos)))
+                         (rspec-core-options ())))
 
 (defun rspec-verify-all ()
   "Runs the 'spec' rake task for the project of the current file."
