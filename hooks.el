@@ -26,9 +26,15 @@
 ;; Pre-save hooks (Stack Overflow ftw! http://stackoverflow.com/questions/1214407/how-to-write-a-global-save-hook-for-emacs)
 (defun unix-newline ()
   (set-buffer-file-coding-system 'undecided-unix))
-(add-hook 'before-save-hook 'unix-newline)
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; prevent markdown extra spaces from getting erased.
+(defun delete-trailing-whitespace-if-needed ()
+  (when (not (equal major-mode 'markdown-mode))
+    (print major-mode)
+    (delete-trailing-whitespace)))
+
+(add-hook 'before-save-hook 'unix-newline)
+(add-hook 'before-save-hook 'delete-trailing-whitespace-if-needed)
 
 ;; M-x compile should call "open html" instead of make
 (add-hook 'html-mode-hook
