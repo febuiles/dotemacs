@@ -70,7 +70,7 @@
 (set-face-attribute 'default nil :height 260)
 
 ;; add ~/.emacs.d to the load path
-(add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/lisp")
 
 ;; add all the directories in .emacs.d/vendor/ to the path
 (let* ((files (directory-files "~/.emacs.d/vendor" t "[^\.+]")))
@@ -113,3 +113,5 @@
  '(rspec-use-rake-flag nil)
  '(rspec-use-rvm nil)
  '(ruby-electric-keywords-alist (quote (("begin" . reindent) ("case" . reindent) ("class" . end) ("def" . end) ("do" . reindent) ("else" . reindent) ("elsif" . reindent) ("end" . reindent) ("ensure" . reindent) ("for" . reindent) ("if" . end) ("module" . end) ("rescue" . reindent) ("unless" . reindent) ("until" . reindent) ("when" . reindent) ("while" . reindent)))))
+(add-hook 'after-init-hook #'projectile-global-mode)
+(setq projectile-completion-system 'grizzl)
