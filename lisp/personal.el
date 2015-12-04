@@ -148,7 +148,7 @@ The spec lookup works like this:
         (fast-spec (fast-spec-file file-name)))
     (if
         (file-exists-p fast-spec) (rspec-run-single-file fast-spec)
-       (rspec-verify-single))))
+       (rspec-verify))))
 
 (defun get-current-test-name ()
   (save-excursion
@@ -196,3 +196,18 @@ The spec lookup works like this:
 (defun alias ()
   (interactive)
   (find-file "~/.alias"))
+
+;; By Xah Lee: http://ergoemacs.org/emacs/emacs_CSS_colors.html
+(defun xah-syntax-color-hex ()
+"Syntax color hex color spec such as 「#ff1100」 in current buffer."
+ (interactive)
+ (font-lock-add-keywords
+  nil
+  '(("#[abcdef[:digit:]]\\{6\\}"
+     (0 (put-text-property
+         (match-beginning 0)
+         (match-end 0)
+         'face (list :background (match-string-no-properties 0)))))))
+ (font-lock-fontify-buffer))
+
+(add-hook 'fundamental-mode 'xah-syntax-color-hex)

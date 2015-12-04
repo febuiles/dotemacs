@@ -34,9 +34,6 @@
 (require 'rvm)
 (rvm-use-default)
 
-(require 'textmate)
-(require 'peepopen)
-(textmate-mode)
-
 (require 'dirtrack)
 (setq-default dirtrack-list '("\\s-\\(\033\\[[0-9]+m\\)\\([^\033\\(]+\\)" 2 1))
+

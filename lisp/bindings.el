@@ -7,6 +7,9 @@
 (global-set-key [f8] 'lyrics)
 (global-set-key [f10] 'fill-paragraph)
 
+;; Projectile
+(global-set-key [(meta t)] 'peepopen-goto-file-gui)
+
 ;; Git
 (global-set-key [(control x)(control g)] 'git-status)
 
@@ -28,11 +31,16 @@
 ;; Ag
 (global-set-key (kbd "C-c C-g") 'ag)
 
+;; Compilation
+(global-set-key "\M-`" 'next-error)
+
+
 ;; Ruby bindings
 
 ;; rspec
 (global-set-key [f2] 'rspec-toggle-spec-and-target)
 (define-key ruby-mode-map (kbd "C-c C-d") 'run-spec)
+(define-key ruby-mode-map (kbd "C-c .") 'rspec-verify-single)
 
 ;; minitest
 ;;(global-set-key [f2] 'ruby-test-toggle-implementation-and-specification)
@@ -63,5 +71,3 @@
 
 ;; Global
 (global-set-key [(control tab)] 'indent-region)
-
-(global-set-key [(meta t)] 'peepopen-goto-file-gui)
