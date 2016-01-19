@@ -50,11 +50,15 @@
 (add-hook 'coffee-mode-hook
   '(lambda() (set (make-local-variable 'tab-width) 2)))
 
+
 (add-hook 'csharp-mode-hook
   '(lambda() (setq c-basic-offset 4)))
 
 ;; colors in shells
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+;; zencoding
+(add-hook 'shell-mode-hook 'zencoding-mode)
 
 ;; ido-mode
 (defun ido-keybindings ()

@@ -37,3 +37,5 @@
 (require 'dirtrack)
 (setq-default dirtrack-list '("\\s-\\(\033\\[[0-9]+m\\)\\([^\033\\(]+\\)" 2 1))
 
+(require 'ido)
+(ido-mode)

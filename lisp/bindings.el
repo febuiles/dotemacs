@@ -8,7 +8,7 @@
 (global-set-key [f10] 'fill-paragraph)
 
 ;; Projectile
-(global-set-key [(meta t)] 'peepopen-goto-file-gui)
+(global-set-key [(meta t)] 'projectile-find-file)
 
 ;; Git
 (global-set-key [(control x)(control g)] 'git-status)
