@@ -89,6 +89,8 @@
 (color-theme-initialize)
 (color-theme-tomorrow-night)
 
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
@@ -113,9 +115,29 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(haskell-program-name "ghci \"+.\"")
+ '(js2-basic-offset 2)
  '(rspec-spec-command "rspec")
  '(rspec-use-rake-flag nil)
  '(rspec-use-rvm nil)
- '(ruby-electric-keywords-alist (quote (("begin" . reindent) ("case" . reindent) ("class" . end) ("def" . end) ("do" . reindent) ("else" . reindent) ("elsif" . reindent) ("end" . reindent) ("ensure" . reindent) ("for" . reindent) ("if" . end) ("module" . end) ("rescue" . reindent) ("unless" . reindent) ("until" . reindent) ("when" . reindent) ("while" . reindent)))))
+ '(ruby-electric-keywords-alist
+   (quote
+    (("begin" . reindent)
+     ("case" . reindent)
+     ("class" . end)
+     ("def" . end)
+     ("do" . reindent)
+     ("else" . reindent)
+     ("elsif" . reindent)
+     ("end" . reindent)
+     ("ensure" . reindent)
+     ("for" . reindent)
+     ("if" . end)
+     ("module" . end)
+     ("rescue" . reindent)
+     ("unless" . reindent)
+     ("until" . reindent)
+     ("when" . reindent)
+     ("while" . reindent)))))
 (add-hook 'after-init-hook #'projectile-global-mode)
 (setq projectile-completion-system 'grizzl)
