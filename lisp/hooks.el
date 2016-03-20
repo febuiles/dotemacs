@@ -67,3 +67,6 @@
   (define-key ido-completion-map (kbd "C-p") 'ido-prev-match))
 
 (add-hook 'ido-setup-hook 'ido-keybindings)
+
+;; js
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
