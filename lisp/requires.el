@@ -23,6 +23,9 @@
 (require 'wrap-region)
 (wrap-region-global-mode t)
 
+(add-to-list 'load-path "~/dev/tern/emacs/")
+(autoload 'tern-mode "tern.el" nil t)
+
 (require 'coffee-mode)
 
 (require 'zencoding-mode)
