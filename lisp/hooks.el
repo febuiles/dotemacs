@@ -1,4 +1,5 @@
 ;; Generic hooks
+(add-hook 'prog-mode-hook '(lambda () (yas/minor-mode)))
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 (add-hook 'ruby-mode-hook (lambda () (ruby-electric-mode)))
@@ -68,5 +69,8 @@
 
 (add-hook 'ido-setup-hook 'ido-keybindings)
 
-;; js
+;; javascript
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+(add-hook 'js-mode-hook
+          (lambda () (set (make-local-variable 'compile-command) "npm test ")))
