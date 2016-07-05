@@ -74,3 +74,7 @@
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
 (add-hook 'js-mode-hook
           (lambda () (set (make-local-variable 'compile-command) "npm test ")))
+
+;; rust
+(add-hook 'rust-mode-hook
+          (lambda () (set (make-local-variable 'compile-command) "cargo build")))
