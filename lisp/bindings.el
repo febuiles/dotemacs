@@ -51,7 +51,7 @@
 (define-key ruby-mode-map (kbd "C-c C-t") 'rinari-find-test)
 
 (define-key ruby-mode-map (kbd "C-c C-r") 'ruby-send-region)
-(define-key ruby-mode-map [f5] 'ruby-run-w/compilation)
+(define-key ruby-mode-map [f5] 'ruby-send-region-and-go)
 
 ;; Shift+direction
 (windmove-default-keybindings)
