@@ -116,8 +116,7 @@
  ;; If there is more than one, they won't work right.
  '(haskell-program-name "ghci \"+.\"")
  '(js2-basic-offset 2)
- '(rspec-spec-command "rspec")
- '(rspec-use-rake-flag nil)
+ '(rspec-use-rake-when-possible nil)
  '(rspec-use-rvm nil)
  '(ruby-electric-keywords-alist
    (quote
