@@ -12,6 +12,7 @@
 
 ;; Use ZenCoding for all markup modes
 (add-hook 'sgml-mode-hook 'zencoding-mode)
+(add-hook 'web-mode 'zencoding-mode)
 
 ;; Use C-c k to kill emacs client sessions.
 (add-hook 'server-switch-hook
