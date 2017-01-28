@@ -79,22 +79,24 @@
   '((zentest . (("app/controllers/\\1.rb" . "test/controllers/\\1_test.rb")
                 ("app/views/\\1.rb"       . "test/views/\\1_test.rb")
                 ("app/models/\\1.rb"      . "test/unit/\\1_test.rb")
-                ("lib/\\1.rb"             . "test/unit/test_\\1.rb")))
+                ("lib/\\1.rb"             . "test/unit/test_\\1.rb")<))
     (rspec   . (("app/models/\\1.rb"      . "spec/models/\\1_spec.rb")
                 ("app/controllers/\\1.rb" . "spec/controllers/\\1_spec.rb")
                 ("app/views/\\1.rb"       . "spec/views/\\1_spec.rb")
                 ("app/helpers/\\1.rb"     . "spec/helpers/\\1_spec.rb")))
-    (rails   . (("app/controllers/\\1.rb" . "test/functional/\\1_test.rb")
+    (rails   . (("app/controllers/\\1.rb" . "test/controllers/\\1_test.rb")
                 ("app/models/\\1.rb"      . "test/unit/\\1_test.rb")
-                ("lib/\\1.rb"             . "test/unit/test_\\1.rb")))
+                ("app/lib/\\1.rb"         . "test/lib/\\1_test.rb")))
     (ruby    . (("lib/\\1.rb"             . "test/test_\\1.rb")
+                ("app/lib/\\1.rb" . "test/functional/\\1_test.rb")
                 ("\\1.rb"                 . "test_\\1.rb"))))
+
   "A list of (name . toggle-mapping) rules used by toggle-filename."
   :group 'toggle
   :type '(repeat (cons string string)))
 
 (defcustom toggle-mapping-style
-  'rspec
+  'rails
   "The default toggle mapping style to load when initialized."
   :group 'toggle
   :type '(symbol))

@@ -38,9 +38,9 @@
 ;; Ruby bindings
 
 ;; rspec
-(global-set-key [f2] 'rspec-toggle-spec-and-target)
-(define-key ruby-mode-map (kbd "C-c C-d") 'run-spec)
-(define-key ruby-mode-map (kbd "C-c .") 'rspec-verify-single)
+(global-set-key [f2] 'toggle-buffer)
+(define-key ruby-mode-map (kbd "C-c C-d") 'minitest-verify)
+(define-key ruby-mode-map (kbd "C-c .") 'minitest-verify-single)
 
 ;; minitest
 ;;(global-set-key [f2] 'ruby-test-toggle-implementation-and-specification)
@@ -51,7 +51,6 @@
 (define-key ruby-mode-map (kbd "C-c C-t") 'rinari-find-test)
 
 (define-key ruby-mode-map (kbd "C-c C-r") 'ruby-send-region)
-(define-key ruby-mode-map [f5] 'ruby-send-region-and-go)
 
 ;; Shift+direction
 (windmove-default-keybindings)
