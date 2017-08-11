@@ -4,6 +4,7 @@
 
 (require 'ri)
 (require 'ruby-compilation)
+(require 'ruby-electric)
 (require 'rhtml-mode)
 (require 'rspec-mode)
 
