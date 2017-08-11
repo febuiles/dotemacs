@@ -33,7 +33,6 @@
 ;; prevent markdown extra spaces from getting erased.
 (defun delete-trailing-whitespace-if-needed ()
   (when (not (equal major-mode 'markdown-mode))
-    (print major-mode)
     (delete-trailing-whitespace)))
 
 (add-hook 'before-save-hook 'unix-newline)
