@@ -39,8 +39,8 @@
 
 ;; rspec
 (global-set-key [f2] 'toggle-buffer)
-(define-key ruby-mode-map (kbd "C-c C-d") 'minitest-verify)
-(define-key ruby-mode-map (kbd "C-c .") 'minitest-verify-single)
+(define-key ruby-mode-map (kbd "C-c C-d") 'rspec-verify)
+(define-key ruby-mode-map (kbd "C-c .") 'rspec-verify-single)
 
 ;; minitest
 ;;(global-set-key [f2] 'ruby-test-toggle-implementation-and-specification)
