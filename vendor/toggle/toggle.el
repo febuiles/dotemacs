@@ -83,6 +83,7 @@
     (rspec   . (("app/models/\\1.rb"      . "spec/models/\\1_spec.rb")
                 ("app/controllers/\\1.rb" . "spec/controllers/\\1_spec.rb")
                 ("app/views/\\1.rb"       . "spec/views/\\1_spec.rb")
+                ("app/lib/\\1.rb"         . "spec/lib/\\1_test.rb")
                 ("app/helpers/\\1.rb"     . "spec/helpers/\\1_spec.rb")))
     (rails   . (("app/controllers/\\1.rb" . "test/controllers/\\1_test.rb")
                 ("app/models/\\1.rb"      . "test/unit/\\1_test.rb")
@@ -96,7 +97,7 @@
   :type '(repeat (cons string string)))
 
 (defcustom toggle-mapping-style
-  'rails
+  'rspec
   "The default toggle mapping style to load when initialized."
   :group 'toggle
   :type '(symbol))
