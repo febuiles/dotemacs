@@ -100,6 +100,7 @@
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 
 (setq toggle-mappings (toggle-style "rails"))
@@ -124,7 +125,9 @@
  ;; If there is more than one, they won't work right.
  '(haskell-program-name "ghci \"+.\"")
  '(js2-basic-offset 2)
- '(package-selected-packages (quote (minitest ag flx-ido projectile)))
+ '(package-selected-packages
+   (quote
+    (dash-at-point minitest ag flx-ido dash-at-point projectile)))
  '(rspec-use-rake-when-possible nil)
  '(rspec-use-rvm nil)
  '(ruby-electric-keywords-alist

@@ -7,6 +7,9 @@
 (global-set-key [f8] 'lyrics)
 (global-set-key [f10] 'fill-paragraph)
 
+;; Dash
+(global-set-key (kbd "C-.") 'dash-at-point)
+
 ;; Projectile
 (global-set-key [(meta t)] 'projectile-find-file)
 
