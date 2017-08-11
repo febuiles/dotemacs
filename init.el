@@ -1,4 +1,11 @@
 ;; don't use tabs
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (setq-default indent-tabs-mode nil)
 
 ;; nice fonts in OS X
@@ -6,6 +13,7 @@
 
 ;; interpret and use ansi color codes in shell output windows
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+(setq shell-file-name "/bin/bash")
 
 ;; use cmd as meta in Carbon Emacs
 (setq mac-command-modifier 'meta)
@@ -116,6 +124,7 @@
  ;; If there is more than one, they won't work right.
  '(haskell-program-name "ghci \"+.\"")
  '(js2-basic-offset 2)
+ '(package-selected-packages (quote (minitest ag flx-ido projectile)))
  '(rspec-use-rake-when-possible nil)
  '(rspec-use-rvm nil)
  '(ruby-electric-keywords-alist
@@ -138,4 +147,4 @@
      ("when" . reindent)
      ("while" . reindent)))))
 (add-hook 'after-init-hook #'projectile-global-mode)
-(setq projectile-completion-system 'grizzl)
+(setq projectile-completion-system 'ido)
