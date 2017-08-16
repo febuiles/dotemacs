@@ -127,7 +127,8 @@
  '(js2-basic-offset 2)
  '(package-selected-packages
    (quote
-    (dash-at-point minitest ag flx-ido dash-at-point projectile)))
+    (dash-at-point minitest ag flx-ido projectile)))
+ '(projectile-completion-system (quote ido))
  '(rspec-use-rake-when-possible nil)
  '(rspec-use-rvm nil)
  '(ruby-electric-keywords-alist
@@ -149,5 +150,6 @@
      ("until" . reindent)
      ("when" . reindent)
      ("while" . reindent)))))
+
 (add-hook 'after-init-hook #'projectile-global-mode)
 (setq projectile-completion-system 'ido)
