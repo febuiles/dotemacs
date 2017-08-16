@@ -4,3 +4,8 @@ vendor/tumble/*
 elpa/
 .DS_Store
 var/
+
+ido.last
+network-security.data
+projectile-bookmarks.eld
+tramp
