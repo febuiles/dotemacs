@@ -15,7 +15,6 @@
 (require 'haml-mode)
 (require 'sass-mode)
 (require 'haskell-site-file)
-(require 'toggle)
 (require 'espresso)
 (require 'yaml-mode)
 (require 'php-mode)

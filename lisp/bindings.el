@@ -45,10 +45,6 @@
 (define-key ruby-mode-map (kbd "C-c C-d") 'rspec-verify)
 (define-key ruby-mode-map (kbd "C-c .") 'rspec-verify-single)
 
-;; minitest
-;;(global-set-key [f2] 'ruby-test-toggle-implementation-and-specification)
-;;(define-key ruby-mode-map (kbd "C-c C-d") 'ruby-run-test-at-point)
-
 (define-key ruby-mode-map (kbd "C-c C-l") 'rinari-find-controller)
 (define-key ruby-mode-map (kbd "C-c C-m") 'rinari-find-model)
 (define-key ruby-mode-map (kbd "C-c C-t") 'rinari-find-test)
