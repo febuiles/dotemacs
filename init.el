@@ -1,3 +1,5 @@
+(package-initialize)
+
 ;; don't use tabs
 
 ;; Added by Package.el.  This must come before configurations of
@@ -72,10 +74,10 @@
 
 (server-start)
 
-;; use a nice font by default
-(set-default-font "-unknown-Inconsolata-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
-
-(set-face-attribute 'default nil :height 260)
+(cond ((string= system-type "gnu/linux")
+       (set-face-attribute 'default nil :height 185))
+      ((string= system-type "darwin")
+       (set-default-font "-unknown-Inconsolata-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")))
 
 ;; add ~/.emacs.d to the load path
 (add-to-list 'load-path "~/.emacs.d/lisp")
