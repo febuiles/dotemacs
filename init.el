@@ -74,11 +74,6 @@
 
 (server-start)
 
-(cond ((string= system-type "gnu/linux")
-       (set-face-attribute 'default nil :height 185))
-      ((string= system-type "darwin")
-       (set-default-font "-unknown-Inconsolata-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")))
-
 ;; add ~/.emacs.d to the load path
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
@@ -94,6 +89,9 @@
 (load "hooks")
 (load "rails")
 (load "auto-insert")
+(load "platform")
+
+
 
 (load-file "~/.emacs.d/vendor/tomorrow-night/color-theme-tomorrow.el")
 (color-theme-initialize)

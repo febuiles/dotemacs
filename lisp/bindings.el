@@ -16,10 +16,6 @@
 ;; Git
 (global-set-key [(control x)(control g)] 'git-status)
 
-;; Change font size
-(global-set-key [(meta -)] 'font-smaller)
-(global-set-key [(meta \+)] 'font-larger)
-
 ;; C-1 opens a temporary buffer 'foo'
 (global-set-key [(control \1)]
   (lambda () (interactive) (switch-to-buffer "foo")))

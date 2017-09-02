@@ -1,0 +1,8 @@
+(cond ((string= system-type "gnu/linux")
+       (set-face-attribute 'default nil :height 185)
+       (global-set-key [(control -)] 'font-smaller)
+       (global-set-key [(control \+)] 'font-larger))
+      ((string= system-type "darwin")
+       (set-default-font "-unknown-Inconsolata-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
+       (global-set-key [(control -)] 'font-smaller)
+       (global-set-key [(control \+)] 'font-larger)))
