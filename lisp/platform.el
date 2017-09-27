@@ -4,5 +4,6 @@
        (global-set-key [(control \+)] 'font-larger))
       ((string= system-type "darwin")
        (set-default-font "-unknown-Inconsolata-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
-       (global-set-key [(control -)] 'font-smaller)
-       (global-set-key [(control \+)] 'font-larger)))
+       (set-face-attribute 'default nil :height 260)
+       (global-set-key [(meta -)] 'font-smaller)
+       (global-set-key [(meta \+)] 'font-larger)))
