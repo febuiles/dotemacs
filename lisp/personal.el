@@ -214,3 +214,8 @@ The spec lookup works like this:
  (font-lock-fontify-buffer))
 
 (add-hook 'fundamental-mode 'xah-syntax-color-hex)
+
+;; web-mode
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
