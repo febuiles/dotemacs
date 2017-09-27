@@ -10,8 +10,9 @@
 ;; Dash
 (global-set-key (kbd "C-.") 'dash-at-point)
 
-;; Projectile
+;; Jumping
 (global-set-key [(meta t)] 'projectile-find-file)
+(global-set-key [(meta shift t)] 'dumb-jump-go)
 
 ;; Git
 (global-set-key [(control x)(control g)] 'git-status)
@@ -32,9 +33,6 @@
 
 ;; Compilation
 (global-set-key "\M-`" 'next-error)
-
-
-;; Ruby bindings
 
 ;; rspec
 (global-set-key [f2] 'projectile-toggle-between-implementation-and-test)
