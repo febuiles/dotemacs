@@ -71,11 +71,13 @@
 (set-frame-height (selected-frame) 37)
 (set-frame-width (selected-frame) 120)
 (set-frame-position (selected-frame) 50 40)
+(setq split-height-threshold nil)
+(setq split-width-threshold 80)
 
 (server-start)
 
-;; add ~/.emacs.d to the load path
 (add-to-list 'load-path "~/.emacs.d/lisp")
+(add-to-list 'exec-path "/usr/local/bin")
 
 ;; add all the directories in .emacs.d/vendor/ to the path
 (let* ((files (directory-files "~/.emacs.d/vendor" t "[^\.+]")))
@@ -91,23 +93,15 @@
 (load "auto-insert")
 (load "platform")
 
-
-
 (load-file "~/.emacs.d/vendor/tomorrow-night/color-theme-tomorrow.el")
 (color-theme-initialize)
 (color-theme-tomorrow-night)
 
-(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
-
-(setq toggle-mappings (toggle-style "rails"))
-
-(setq web-mode-markup-indent-offset 2)
-(setq web-mode-css-indent-offset 2)
-(setq web-mode-code-indent-offset 2)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -124,11 +118,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(haskell-program-name "ghci \"+.\"")
- '(js2-basic-offset 2)
  '(package-selected-packages
    (quote
-    (dash-at-point minitest ag flx-ido projectile)))
- '(projectile-completion-system (quote ido))
+    (dumb-jump gist dash-at-point minitest ag flx-ido grizzl projectile)))
  '(rspec-use-rake-when-possible nil)
  '(rspec-use-rvm nil)
  '(ruby-electric-keywords-alist
@@ -149,7 +141,9 @@
      ("unless" . reindent)
      ("until" . reindent)
      ("when" . reindent)
-     ("while" . reindent)))))
+     ("while" . reindent))))
+ '(toggle-mapping-style (quote rspec)))
 
 (add-hook 'after-init-hook #'projectile-global-mode)
 (setq projectile-completion-system 'ido)
+(put 'upcase-region 'disabled nil)
