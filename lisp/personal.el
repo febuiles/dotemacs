@@ -1,8 +1,5 @@
 ;; personal.el - random bits of elisp
 
-;; jelou
-(global-disable-mouse-mode)
-
 (defun increase-font-size ()
   (set-face-attribute 'default (selected-frame) :height (+ (face-attribute 'default :height) 10)))
 
