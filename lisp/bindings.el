@@ -58,8 +58,5 @@
 ;; Occur
 (define-key isearch-mode-map (kbd "C-o") 'isearch-occur)
 
-;; Textmate mode
-(global-set-key "\M-T" 'textmate-goto-symbol)
-
 ;; Global
 (global-set-key [(control tab)] 'indent-region)
