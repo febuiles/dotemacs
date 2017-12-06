@@ -120,7 +120,7 @@
  '(haskell-program-name "ghci \"+.\"")
  '(package-selected-packages
    (quote
-    (dumb-jump gist dash-at-point minitest ag flx-ido grizzl projectile)))
+    (haskell-mode rust-mode dumb-jump gist dash-at-point minitest ag flx-ido grizzl projectile)))
  '(rspec-use-rake-when-possible nil)
  '(rspec-use-rvm nil)
  '(ruby-electric-keywords-alist
