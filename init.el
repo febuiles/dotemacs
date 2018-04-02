@@ -15,7 +15,7 @@
 
 ;; interpret and use ansi color codes in shell output windows
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
-(setq shell-file-name "/bin/bash")
+;(setq shell-file-name "/bin/bash --login")
 
 ;; use cmd as meta in Carbon Emacs
 (setq mac-command-modifier 'meta)
@@ -102,6 +102,10 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
+
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
