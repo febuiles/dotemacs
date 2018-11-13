@@ -1,12 +1,5 @@
 (cond ((string= system-type "gnu/linux")
 
-       (global-set-key [f3] 'shell)
-       (global-set-key [f4] 'vc-print-log)
-       (global-set-key [f5] 'compile)
-       (global-set-key [f6] 'toggle-frame-fullscreen)
-       (global-set-key [f8] 'lyrics)
-       (global-set-key [f10] 'fill-paragraph)
-
        (set-face-attribute 'default nil :height 155)
        (global-set-key [(control -)] 'font-smaller)
        (global-set-key [(control \+)] 'font-larger)
@@ -15,11 +8,4 @@
       ((string= system-type "darwin")
 
        (set-default-font "-unknown-Inconsolata-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
-       (set-face-attribute 'default nil :height 230)
-       (global-set-key [(control -)] 'font-smaller)
-       (global-set-key [(control \+)] 'font-larger)
-       (global-set-key [f13] 'shell)
-       (global-set-key [f18] 'vc-print-log)
-       (global-set-key [f15] 'compile)
-       (global-set-key [f16] 'toggle-frame-fullscreen)
-       (global-set-key [f17] 'fill-paragraph)))
+       (set-face-attribute 'default nil :height 230)))
