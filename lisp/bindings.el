@@ -14,7 +14,7 @@
 (global-set-key (kbd "C-.") 'dash-at-point)
 
 ;; Jumping
-(global-set-key [(meta t)] 'projectile-find-file)
+(global-set-key [(meta t)] 'fzf)
 (global-set-key [(meta shift t)] 'dumb-jump-go)
 
 ;; Git
