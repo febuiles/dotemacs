@@ -1,13 +1,11 @@
 (package-initialize)
-
-;; don't use tabs
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+;; don't use tabs
 (setq-default indent-tabs-mode nil)
 
 ;; nice fonts in OS X
@@ -124,7 +122,7 @@
  '(haskell-program-name "ghci \"+.\"")
  '(package-selected-packages
    (quote
-    (dash haskell-mode rust-mode dumb-jump gist dash-at-point minitest ag flx-ido projectile)))
+    (fzf magit dash haskell-mode rust-mode dumb-jump gist dash-at-point minitest ag flx-ido projectile)))
  '(rspec-use-rake-when-possible nil)
  '(rspec-use-rvm nil)
  '(ruby-electric-keywords-alist
