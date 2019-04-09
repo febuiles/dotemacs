@@ -122,7 +122,7 @@
  '(haskell-program-name "ghci \"+.\"")
  '(package-selected-packages
    (quote
-    (fzf magit dash haskell-mode rust-mode dumb-jump gist dash-at-point minitest ag flx-ido projectile)))
+    (go-mode fzf magit dash haskell-mode rust-mode dumb-jump gist dash-at-point minitest ag flx-ido projectile)))
  '(rspec-use-rake-when-possible nil)
  '(rspec-use-rvm nil)
  '(ruby-electric-keywords-alist
@@ -149,3 +149,4 @@
 (add-hook 'after-init-hook #'projectile-global-mode)
 (setq projectile-completion-system 'ido)
 (put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
