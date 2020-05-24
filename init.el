@@ -69,8 +69,8 @@
 (set-frame-height (selected-frame) 37)
 (set-frame-width (selected-frame) 120)
 (set-frame-position (selected-frame) 50 40)
-(setq split-height-threshold nil)
-(setq split-width-threshold 80)
+(setq split-height-threshold 50)
+(setq split-width-threshold 100)
 
 (server-start)
 
