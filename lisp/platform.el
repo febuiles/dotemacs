@@ -11,6 +11,7 @@
        (set-face-attribute 'default nil :height 155)
        (global-set-key [(control -)] 'font-smaller)
        (global-set-key [(control \+)] 'font-larger)
+       (global-set-key [(control x)(control g)] 'magit-status)
        (global-set-key [XF86AudioRaiseVolume] 'shell))
 
       ((string= system-type "darwin")
