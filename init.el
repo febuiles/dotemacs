@@ -21,7 +21,7 @@
 
 ;; hide all the chrome.
 (setq inhibit-startup-message t)
-(menu-bar-mode 1)
+(menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (setq ns-use-native-fullscreen nil)
