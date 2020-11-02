@@ -29,11 +29,9 @@
 (yas/load-directory "~/.emacs.d/vendor/yasnippet/snippets")
 (yas/global-mode 1)
 
+(require 'ruby-electric)
 (require 'rvm)
 (rvm-use-default)
 
 (require 'dirtrack)
 (setq-default dirtrack-list '("\\s-\\(\033\\[[0-9]+m\\)\\([^\033\\(]+\\)" 2 1))
-
-;; (require 'ido)
-;; (ido-mode)

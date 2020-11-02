@@ -2,7 +2,6 @@
 (add-hook 'prog-mode-hook '(lambda () (yas/minor-mode)))
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
-(add-hook 'ruby-mode-hook (lambda () (ruby-electric-mode)))
 (add-hook 'ruby-mode-hook (lambda () (rvm-activate-corresponding-ruby)))
 (add-hook 'ruby-mode-hook 'minitest-mode)
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
@@ -14,6 +13,10 @@
 ;; Use ZenCoding for all markup modes
 (add-hook 'sgml-mode-hook 'zencoding-mode)
 (add-hook 'web-mode 'zencoding-mode)
+
+;; electric ruby
+(eval-after-load "ruby-mode"
+  '(add-hook 'ruby-mode-hook 'ruby-electric-mode))
 
 ;; Use C-c k to kill emacs client sessions.
 (add-hook 'server-switch-hook
