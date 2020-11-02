@@ -1,4 +1,3 @@
-(package-initialize)
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -113,39 +112,15 @@
  '(mumamo-background-chunk-submode1 ((((class color) (min-colors 88) (background dark)) nil)))
  '(mumamo-background-chunk-submode2 ((((class color) (min-colors 88) (background dark)) nil)))
  '(mumamo-background-chunk-submode3 ((((class color) (min-colors 88) (background dark)) nil))))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(haskell-program-name "ghci \"+.\"")
- '(package-selected-packages
-   (quote
-    (go-mode fzf magit dash haskell-mode rust-mode dumb-jump gist dash-at-point minitest ag flx-ido projectile)))
- '(rspec-use-rake-when-possible nil)
- '(rspec-use-rvm nil)
- '(ruby-electric-keywords-alist
-   (quote
-    (("begin" . reindent)
-     ("case" . reindent)
-     ("class" . end)
-     ("def" . end)
-     ("do" . reindent)
-     ("else" . reindent)
-     ("elsif" . reindent)
-     ("end" . reindent)
-     ("ensure" . reindent)
-     ("for" . reindent)
-     ("if" . end)
-     ("module" . end)
-     ("rescue" . reindent)
-     ("unless" . reindent)
-     ("until" . reindent)
-     ("when" . reindent)
-     ("while" . reindent))))
- '(toggle-mapping-style (quote rspec)))
+;; (custom-set-variables
+;;  ;; custom-set-variables was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(haskell-program-name "ghci \"+.\"")
+;;  '(package-selected-packages
+;;    (quote
+;;     (json-mode neotree lsp-mode tern swift-mode go-mode fzf magit dash haskell-mode rust-mode dumb-jump gist dash-at-point minitest ag flx-ido))))
 
-(add-hook 'after-init-hook #'projectile-global-mode)
-(setq projectile-completion-system 'ido)
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)

@@ -2,15 +2,12 @@
 (when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))
 (require 'git)
 
-(require 'ri)
 (require 'ruby-compilation)
-(require 'ruby-electric)
-(require 'rhtml-mode)
-(require 'rspec-mode)
 
 (require 'color-theme)
 (require 'color-theme-autoloads)
 
+(require 'coffee-mode)
 (require 'markdown-mode)
 (require 'haml-mode)
 (require 'sass-mode)
@@ -26,8 +23,6 @@
 (add-to-list 'load-path "~/dev/tern/emacs/")
 (autoload 'tern-mode "tern.el" nil t)
 
-(require 'coffee-mode)
-
 (require 'zencoding-mode)
 
 (require 'yasnippet)
@@ -40,5 +35,5 @@
 (require 'dirtrack)
 (setq-default dirtrack-list '("\\s-\\(\033\\[[0-9]+m\\)\\([^\033\\(]+\\)" 2 1))
 
-(require 'ido)
-(ido-mode)
+;; (require 'ido)
+;; (ido-mode)

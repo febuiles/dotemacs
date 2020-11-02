@@ -1,6 +1,7 @@
-;; Stolen from Jim Weirich
+;;(setq ruby-deep-indent-paren nil)
 (defconst ruby-eval-command "ruby")
 
+;; Stolen from Jim Weirich
 (defun ruby-eval-buffer ()
   "Evaluate the current buffer and display the result in a buffer."
   (interactive)

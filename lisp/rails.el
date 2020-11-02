@@ -22,15 +22,14 @@
 (defun tt ()
   (interactive)
   (cd (find-rails-root))
-  (compile (concat (concat (getenv "HOME") "/w/github/") "script/testrb") " " (buffer-file-name))))
+  (compile (concat (concat (getenv "HOME") "/w/github/" "script/testrb") " " (buffer-file-name))))
 
 (defun tt-at-point ()
   (interactive)
   (cd (find-rails-root))
   (compile (concat
-            (concat
-             (getenv "HOME")
-             "/w/github/" "script/testrb")
+            (getenv "HOME")
+            "/w/github/" "script/testrb"
             " -n \"/L"
             (number-to-string (line-number-at-pos))
             "$/\" "
