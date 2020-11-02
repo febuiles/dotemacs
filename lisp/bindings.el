@@ -13,9 +13,11 @@
 ;; Dash
 (global-set-key (kbd "C-.") 'dash-at-point)
 
+
 ;; Jumping
 (global-set-key [(meta t)] 'fzf)
 (global-set-key [(meta shift t)] 'dumb-jump-go)
+(global-set-key (kbd "C-x b") 'ivy-switch-buffer)
 
 ;; Git
 (global-set-key [(control x)(control g)] 'git-status)
