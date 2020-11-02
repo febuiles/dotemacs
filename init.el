@@ -121,7 +121,31 @@
  '(haskell-program-name "ghci \"+.\"")
  '(package-selected-packages
    (quote
-    (json-mode neotree lsp-mode tern swift-mode go-mode fzf magit dash haskell-mode rust-mode dumb-jump gist dash-at-point minitest ag flx-ido))))
+    (go-mode fzf magit dash haskell-mode rust-mode dumb-jump gist dash-at-point minitest ag flx-ido projectile)))
+ '(rspec-use-rake-when-possible nil)
+ '(rspec-use-rvm nil)
+ '(ruby-electric-keywords-alist
+   (quote
+    (("begin" . reindent)
+     ("case" . reindent)
+     ("class" . end)
+     ("def" . end)
+     ("do" . reindent)
+     ("else" . reindent)
+     ("elsif" . reindent)
+     ("end" . reindent)
+     ("ensure" . reindent)
+     ("for" . reindent)
+     ("if" . end)
+     ("module" . end)
+     ("rescue" . reindent)
+     ("unless" . reindent)
+     ("until" . reindent)
+     ("when" . reindent)
+     ("while" . reindent))))
+ '(toggle-mapping-style (quote rspec)))
 
+(add-hook 'after-init-hook #'projectile-global-mode)
+(setq projectile-completion-system 'ido)
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)

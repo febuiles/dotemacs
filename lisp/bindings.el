@@ -39,8 +39,8 @@
 
 ;; rspec
 (global-set-key [f2] 'projectile-toggle-between-implementation-and-test)
-(define-key ruby-mode-map (kbd "C-c C-d") 'rspec-verify)
-(define-key ruby-mode-map (kbd "C-c .") 'rspec-verify-single)
+(define-key ruby-mode-map (kbd "C-c C-d") 'tt)
+(define-key ruby-mode-map (kbd "C-c .") 'tt-at-point)
 
 (define-key ruby-mode-map (kbd "C-c C-l") 'rinari-find-controller)
 (define-key ruby-mode-map (kbd "C-c C-m") 'rinari-find-model)

@@ -19,3 +19,18 @@
   (interactive)
   (find-file (concat (find-rails-root) "/Gemfile")))
 
+(defun tt ()
+  (interactive)
+  (cd (find-rails-root))
+  (compile (concat (concat "/Users/federico/w/github/" "script/testrb") " " (buffer-file-name))))
+
+(defun tt-at-point ()
+  (interactive)
+  (cd (find-rails-root))
+  (compile (concat
+            (concat
+             "/Users/federico/w/github/" "script/testrb")
+            " -n \"/L"
+            (number-to-string (line-number-at-pos))
+            "$/\" "
+            (buffer-file-name))))
