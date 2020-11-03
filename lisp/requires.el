@@ -1,6 +1,7 @@
 (require 'vc-git)
 (when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))
 (require 'git)
+(require 'github-browse-file)
 
 (require 'ruby-compilation)
 
