@@ -216,3 +216,7 @@ The spec lookup works like this:
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
+
+;; dired
+(setq insert-directory-program "gls")
+(setq dired-listing-switches "-aBhl --group-directories-first")
