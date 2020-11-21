@@ -21,5 +21,5 @@
        (set-exec-path-from-shell-PATH)
        (setq split-height-threshold nil)
        (setq split-width-threshold 80)
-       (set-default-font "-unknown-Inconsolata-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
+       (set-frame-font "-unknown-Inconsolata-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
        (set-face-attribute 'default nil :height 230)))
