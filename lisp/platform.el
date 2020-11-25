@@ -6,8 +6,6 @@
     (setenv "PATH" path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 
-(when (equal system-type 'darwin) (set-exec-path-from-shell-PATH))
-
 (cond ((string= system-type "gnu/linux")
        (set-face-attribute 'default nil :height 155)
        (setq split-height-threshold 50)
