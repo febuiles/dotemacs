@@ -20,4 +20,6 @@
        (setq split-height-threshold nil)
        (setq split-width-threshold 80)
        (set-frame-font "-unknown-Inconsolata-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
+       ;; disable fullscreen animations
+       (set-frame-parameter nil 'fullscreen 'fullboth)
        (set-face-attribute 'default nil :height 230)))
