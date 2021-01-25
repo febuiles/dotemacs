@@ -18,7 +18,7 @@
       ((string= system-type "darwin")
        (set-exec-path-from-shell-PATH)
        (setq split-height-threshold nil)
-       (setq split-width-threshold 80)
+       (setq split-width-threshold 100)
        (set-frame-font "-unknown-Inconsolata-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
        ;; disable fullscreen animations
        (set-frame-parameter nil 'fullscreen 'fullboth)
