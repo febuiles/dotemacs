@@ -57,9 +57,6 @@
 (global-set-key "\C-c\C-w" 'ispell-word)
 (global-set-key "\C-c\C-d" 'word-definition)
 
-;; Align
-(global-set-key "\C-x\C-a" 'align-regexp)
-
 ;; Occur
 (define-key isearch-mode-map (kbd "C-o") 'isearch-occur)
 
