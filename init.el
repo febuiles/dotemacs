@@ -90,9 +90,7 @@
 (load "auto-insert")
 (load "platform")
 
-(load-file "~/.emacs.d/vendor/tomorrow-night/color-theme-tomorrow.el")
-(color-theme-initialize)
-(color-theme-tomorrow-night)
+(load-theme 'plan9)
 
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 
