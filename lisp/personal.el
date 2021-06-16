@@ -220,3 +220,6 @@ The spec lookup works like this:
 ;; dired
 (setq insert-directory-program "gls")
 (setq dired-listing-switches "-aBhl --group-directories-first")
+
+;; personal alias for deadgrep
+(defalias 'ag 'deadgrep)
