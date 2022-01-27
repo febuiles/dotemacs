@@ -5,8 +5,6 @@
 (require 'git)
 (require 'github-browse-file)
 
-(require 'ruby-compilation)
-
 (require 'color-theme)
 (require 'color-theme-autoloads)
 
