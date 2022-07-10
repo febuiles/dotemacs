@@ -27,6 +27,7 @@
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\.erb$" . espresso-mode))
 (add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.rs$" . rust-mode))
 (add-to-list 'auto-mode-alist '("\\.eye$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.ejs$" . rhtml-mode))

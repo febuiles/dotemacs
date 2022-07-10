@@ -16,7 +16,6 @@
 (require 'espresso)
 (require 'yaml-mode)
 (require 'php-mode)
-(require 'go-mode)
 (require 'autotest)
 (require 'wrap-region)
 (wrap-region-global-mode t)

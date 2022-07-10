@@ -118,7 +118,7 @@
 ;;  '(haskell-program-name "ghci \"+.\"")
 ;;  '(package-selected-packages
 ;;    (quote
-;;     (json-mode neotree lsp-mode tern swift-mode go-mode fzf magit dash haskell-mode rust-mode dumb-jump gist dash-at-point minitest ag flx-ido))))
+;;     (json-mode neotree lsp-mode tern swift-mode fzf magit dash haskell-mode rust-mode dumb-jump gist dash-at-point minitest ag flx-ido))))
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
@@ -128,6 +128,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("18cd5a0173772cdaee5522b79c444acbc85f9a06055ec54bb91491173bc90aaa" default))
+   '("3770d0ae70172461ee0a02edcff71b7d480dc54066e8960d8de9367d12171efb" "18cd5a0173772cdaee5522b79c444acbc85f9a06055ec54bb91491173bc90aaa" default))
  '(package-selected-packages
-   '(gist js2-mode projectile-rails deadgrep web-mode plan9-theme rust-mode rhtml-mode ivy tern swift-mode neotree minitest magit lsp-mode json-mode go-mode dumb-jump auto-complete)))
+   '(typescript-mode ag gist js2-mode projectile-rails deadgrep web-mode plan9-theme rust-mode rhtml-mode ivy tern swift-mode neotree minitest magit lsp-mode json-mode dumb-jump auto-complete)))
