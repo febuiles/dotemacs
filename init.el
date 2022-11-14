@@ -130,4 +130,4 @@
  '(custom-safe-themes
    '("3770d0ae70172461ee0a02edcff71b7d480dc54066e8960d8de9367d12171efb" "18cd5a0173772cdaee5522b79c444acbc85f9a06055ec54bb91491173bc90aaa" default))
  '(package-selected-packages
-   '(typescript-mode ag gist js2-mode projectile-rails deadgrep web-mode plan9-theme rust-mode rhtml-mode ivy tern swift-mode neotree minitest magit lsp-mode json-mode dumb-jump auto-complete)))
+   '(go-mode typescript-mode ag gist js2-mode projectile-rails deadgrep web-mode plan9-theme rust-mode rhtml-mode ivy tern swift-mode neotree minitest magit lsp-mode json-mode dumb-jump auto-complete)))
