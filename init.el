@@ -90,6 +90,7 @@
 (load "auto-insert")
 (load "platform")
 
+(setq custom-theme-load-path '("~/.emacs.d/themes"))
 (load-theme 'plan9)
 
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
