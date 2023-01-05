@@ -98,9 +98,12 @@
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
 
-(setq web-mode-markup-indent-offset 2)
-(setq web-mode-css-indent-offset 2)
-(setq web-mode-code-indent-offset 2)
+;; stolen from @patrickt for Codespaces performance
+(setq vc-handled-backends '(Git))
+
+(use-package codespaces
+  :ensure-system-package gh
+  :config (codespaces-setup))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -131,4 +134,4 @@
  '(custom-safe-themes
    '("3770d0ae70172461ee0a02edcff71b7d480dc54066e8960d8de9367d12171efb" "18cd5a0173772cdaee5522b79c444acbc85f9a06055ec54bb91491173bc90aaa" default))
  '(package-selected-packages
-   '(go-mode typescript-mode ag gist js2-mode projectile-rails deadgrep web-mode plan9-theme rust-mode rhtml-mode ivy tern swift-mode neotree minitest magit lsp-mode json-mode dumb-jump auto-complete)))
+   '(go-mode typescript-mode ag gist js2-mode projectile-rails deadgrep web-mode rust-mode rhtml-mode ivy tern swift-mode neotree minitest magit lsp-mode json-mode dumb-jump auto-complete)))
