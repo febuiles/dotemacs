@@ -44,7 +44,6 @@
       c-tab-always-indent "other"
       browse-url-browser-function 'browse-default-macosx-browser
       make-backup-files nil
-      markdown-command "Markdown.pl | SmartyPants.pl"
       standard-indent 4
       css-indent-offset 2
       transient-mark-mode t
@@ -60,7 +59,6 @@
 
 (show-paren-mode t)
 (setq show-paren-style 'expression)
-
 ;; use y/n instead of yes/no
 (defalias 'yes-or-no-p 'y-or-n-p)
 
