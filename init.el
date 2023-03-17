@@ -96,9 +96,6 @@
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
 
-;; stolen from @patrickt for Codespaces performance
-(setq vc-handled-backends '(Git))
-
 (use-package codespaces
   :ensure-system-package gh
   :config (codespaces-setup))
