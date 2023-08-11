@@ -1,4 +1,4 @@
-;; Added by Package.el.  This must come before configurations of
+'(vc-handled-backends '(Git)));; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
@@ -96,9 +96,12 @@
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
 
+;; make codespaces a bit faster
 (use-package codespaces
   :ensure-system-package gh
-  :config (codespaces-setup))
+:config (codespaces-setup))
+
+(setq vc-handled-backends '(Git))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -129,4 +132,4 @@
  '(custom-safe-themes
    '("3770d0ae70172461ee0a02edcff71b7d480dc54066e8960d8de9367d12171efb" "18cd5a0173772cdaee5522b79c444acbc85f9a06055ec54bb91491173bc90aaa" default))
  '(package-selected-packages
-   '(dockerfile-mode go-mode typescript-mode ag gist js2-mode projectile-rails deadgrep web-mode rust-mode rhtml-mode ivy tern swift-mode neotree minitest magit lsp-mode json-mode dumb-jump auto-complete)))
+   '(zen-mode dockerfile-mode go-mode typescript-mode ag gist js2-mode projectile-rails deadgrep web-mode rust-mode rhtml-mode ivy tern swift-mode neotree minitest magit lsp-mode json-mode dumb-jump auto-complete)))
