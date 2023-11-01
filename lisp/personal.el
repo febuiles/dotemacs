@@ -223,3 +223,19 @@ The spec lookup works like this:
 
 ;; personal alias for deadgrep
 (defalias 'ag 'deadgrep)
+
+;; Borrowed from https://stackoverflow.com/questions/17605822/emacs-shell-or-terminal-escape-characters-in-compilation-buffer-for-rails-tests
+;; this feels more "Emacsy" than running this in a shell?
+;; TODO: rewrite the thing with hooks instead of setq'ing?
+
+(define-derived-mode ansi-compilation-mode compilation-mode "ansi compilation"
+  "Compilation mode that understands ansi colors."
+  (require 'ansi-color)
+  (toggle-read-only 0)
+  (ansi-color-apply-on-region (point-min) (point-max)))
+
+(defun colorize-compilation (one two)
+  "ansi colorize the compilation buffer."
+  (ansi-compilation-mode))
+
+(setq compilation-finish-function 'colorize-compilation)
