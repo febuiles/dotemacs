@@ -20,8 +20,8 @@
 (require 'wrap-region)
 (wrap-region-global-mode t)
 
-(add-to-list 'load-path "~/dev/tern/emacs/")
 (autoload 'tern-mode "tern.el" nil t)
+(setq tern-command '("tern" "--no-port-file"))
 
 (require 'zencoding-mode)
 
@@ -37,3 +37,5 @@
 (setq-default dirtrack-list '("\\s-\\(\033\\[[0-9]+m\\)\\([^\033\\(]+\\)" 2 1))
 
 (setq vc-handled-backends '(Git))
+
+(require 'lsp-mode)

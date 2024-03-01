@@ -16,7 +16,7 @@
 
 ;; Jumping
 (global-set-key [(meta t)] 'fzf-git)
-(global-set-key [(meta shift t)] 'dumb-jump-go)
+(global-set-key [(meta shift t)] 'lsp-find-definition)
 (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
 
 ;; Git
