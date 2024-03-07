@@ -75,8 +75,9 @@
 
 
 ;; golang
-(add-hook 'rust-mode-hook
+(add-hook 'go-mode-hook
           (lambda () (set (make-local-variable 'compile-command) "go test")))
+
 
 (add-hook 'go-mode-hook #'lsp-deferred)
 
