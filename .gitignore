@@ -9,3 +9,5 @@ ido.last
 network-security.data
 projectile-bookmarks.eld
 tramp
+.cache
+.lsp-session*
