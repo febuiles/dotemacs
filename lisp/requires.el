@@ -1,3 +1,4 @@
+(require 'ansi-color)
 (require 'fzf)
 
 (require 'vc-git)

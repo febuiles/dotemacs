@@ -10,6 +10,9 @@
 (add-hook 'ruby-mode-hook 'turn-on-auto-fill)
 (add-hook 'html-mode-hook 'turn-off-auto-fill)
 
+;; handle escape sequences in *compilation*
+(add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
+
 ;; Use ZenCoding for all markup modes
 (add-hook 'sgml-mode-hook 'zencoding-mode)
 (add-hook 'web-mode 'zencoding-mode)
