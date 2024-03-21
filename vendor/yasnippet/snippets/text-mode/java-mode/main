@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#name : Main method
-# --
-public static void main(String[] args) {
-  $0
-}

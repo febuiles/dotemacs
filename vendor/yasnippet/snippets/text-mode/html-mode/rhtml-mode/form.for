@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#name : form_for
-# --
-<%= form_for ${1:variable} do |f| %>
-  $0
-<% end %>

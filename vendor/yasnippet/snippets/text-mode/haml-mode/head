@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-#name : head
-# --
-%head
-  $0

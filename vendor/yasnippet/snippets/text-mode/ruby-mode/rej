@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : reject
-# --
-reject { |${1:variable}| $0 }

@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#name : ul
-# --
-<ul>
-  $0
-</ul>

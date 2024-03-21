@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : each { ... }
-# --
-each { |${1:variable_name}| $0 }

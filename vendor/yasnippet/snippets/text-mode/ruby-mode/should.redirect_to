@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : should_redirect_to
-# --
-should_redirect_to('${1:description}') { $0 }

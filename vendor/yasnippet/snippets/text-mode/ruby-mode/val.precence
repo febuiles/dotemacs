@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : presence
-# --
-validates :${1:attributes}, :presence => true

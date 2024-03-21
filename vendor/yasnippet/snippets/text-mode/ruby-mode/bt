@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name belongs_to
-# --
-belongs_to :

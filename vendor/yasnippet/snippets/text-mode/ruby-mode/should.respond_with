@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : should_respond_with
-# --
-should_respond_with :${1:response}

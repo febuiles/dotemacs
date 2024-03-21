@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : does_not_contain
-# --
-assert_does_not_contain ${1:collection}, ${2:element}

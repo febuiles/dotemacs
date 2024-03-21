@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : string-match
-# --
-(string-match ${1:regex} ${2:string})

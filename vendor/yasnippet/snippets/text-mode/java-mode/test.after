@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-#name : @After
-# --
-/**
- * 
- */
-@After public void ${1:name}($2) {
-  $0
-}

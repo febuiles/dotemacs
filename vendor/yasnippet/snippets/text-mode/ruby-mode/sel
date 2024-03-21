@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : select
-# --
-select { |${1:variable}| $0$1 }

@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#name : raises
-# --
-assert_raises ${1:Exception} do
-  $0
-end

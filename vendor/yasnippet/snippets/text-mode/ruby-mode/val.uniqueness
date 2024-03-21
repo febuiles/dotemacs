@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : uniqueness
-# --
-validates :${1:attributes}, :uniqueness => true

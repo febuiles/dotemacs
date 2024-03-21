@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : elsif
-# --
-elsif ${1:condition}

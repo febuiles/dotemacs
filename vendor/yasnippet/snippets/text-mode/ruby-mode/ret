@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : redirect_to
-# --
-redirect_to $1

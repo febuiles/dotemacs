@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : acceptance
-# --
-validates :${1:attributes}, :acceptance => true

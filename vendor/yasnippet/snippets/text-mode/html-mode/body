@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#name : body
-# --
-<body>
-  $0
-</body>

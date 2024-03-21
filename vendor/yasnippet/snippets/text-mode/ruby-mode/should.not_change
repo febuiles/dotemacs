@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : should_not_change
-# --
-should_not_change('${1:description}') { $0 }

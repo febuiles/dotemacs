@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : should_have_one association
-# --
-should_have_one :${association}

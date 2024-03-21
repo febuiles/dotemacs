@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : numericality
-# --
-validates :${1:attributes}, :numericality => true

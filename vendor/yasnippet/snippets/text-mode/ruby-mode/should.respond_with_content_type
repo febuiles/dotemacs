@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : should_respond_with_content_type
-# --
-should_respond_with_content_type :${content_type}

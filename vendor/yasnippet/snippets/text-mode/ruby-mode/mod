@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#name : Module
-# --
-module ${1:name}
-  $0
-end

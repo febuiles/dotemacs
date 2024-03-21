@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : Display - block
-# --
-display: ${1:$$(yas/choose-value '("block" "none" "inline"))};

@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : should_belong_to
-# --
-should_belong_to :${1:association}

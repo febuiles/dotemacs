@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : should_have_readonly_attributes
-# --
-should_have_readonly_attributes :${1:attribute}

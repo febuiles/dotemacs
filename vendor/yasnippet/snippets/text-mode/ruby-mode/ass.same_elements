@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : same_elements
-# --
-assert_same_elements ${1:expected}, ${2:actual}

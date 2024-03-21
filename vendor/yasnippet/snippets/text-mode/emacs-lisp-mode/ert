@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: ert-deftest
-# --
-(ert-deftest ${1:name} ()
-  ""
-  $0
-  )

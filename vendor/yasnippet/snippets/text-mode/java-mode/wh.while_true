@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-#name : true
-# --
-while(true) {
-  $0
-  break;
-}

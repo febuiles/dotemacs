@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-#name : cond
-# --
-(cond (${1:condition}
-       $0
-       )
-      (t
-
-       ))

@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-#name : Id block
-#key : #
-# --
-#${1:id} {
-  $0
-}

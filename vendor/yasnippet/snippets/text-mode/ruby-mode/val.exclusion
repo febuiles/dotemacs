@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : exclusion
-# --
-validates :${1:attributes}, :exclusion => { :in => $0 }

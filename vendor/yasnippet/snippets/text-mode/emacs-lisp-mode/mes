@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-#name : message
-# --
-(message $0)

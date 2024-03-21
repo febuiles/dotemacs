@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#name : Factory.define
-# --
-Factory.define :${1:name} do |f|
-  $0
-end
