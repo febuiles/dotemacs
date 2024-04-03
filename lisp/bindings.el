@@ -20,7 +20,7 @@
 (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
 
 ;; Git
-(global-set-key [(control x)(control g)] 'magit)
+(global-set-key [(control x)(control g)] 'magit-status)
 
 ;; C-1 opens a temporary buffer 'foo'
 (global-set-key [(control \1)]
