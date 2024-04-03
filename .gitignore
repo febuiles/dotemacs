@@ -11,3 +11,4 @@ projectile-bookmarks.eld
 tramp
 .cache
 .lsp-session*
+transient/
