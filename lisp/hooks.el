@@ -13,10 +13,6 @@
 ;; handle escape sequences in *compilation*
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
-;; Use ZenCoding for all markup modes
-(add-hook 'sgml-mode-hook 'zencoding-mode)
-(add-hook 'web-mode 'zencoding-mode)
-
 ;; electric ruby
 (eval-after-load "ruby-mode"
   '(add-hook 'ruby-mode-hook 'ruby-electric-mode))
@@ -54,9 +50,6 @@
 
 ;; colors in shells
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-
-;; zencoding
-(add-hook 'shell-mode-hook 'zencoding-mode)
 
 ;; ido-mode
 (defun ido-keybindings ()
