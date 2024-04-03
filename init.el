@@ -94,7 +94,8 @@
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                         ("melpa" . "https://melpa.org/packages/")))
+                         ("melpa" . "https://melpa.org/packages/")
+                         ("stable" . "https://stable.melpa.org/packages/")))
 
 ;; make codespaces a bit faster
 (use-package codespaces
