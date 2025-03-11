@@ -34,6 +34,12 @@
   (lambda () (run-at-time 8 nil
     (lambda () (delete-windows-on "*Completions*")))))
 
+
+;; LSP
+(setq lsp-disabled-clients '(rubocop-ls))
+(setq lsp-ruby-lsp-enabled t)
+(setq lsp-ruby-lsp-server-command '("bundle" "exec" "ruby-lsp"))
+
 ;; HAML stuff
 (defun haml-replace-region (begin end)
   "Replaces the current block of Haml code with the HTML equivalent"

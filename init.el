@@ -98,10 +98,7 @@
                          ("melpa" . "https://melpa.org/packages/")
                          ("stable" . "https://stable.melpa.org/packages/")))
 
-;; make codespaces a bit faster
-(use-package codespaces
-  :ensure-system-package gh
-:config (codespaces-setup))
+(add-to-list 'treesit-extra-load-path "~/.emacs.d/tree-sitter/")
 
 (setq vc-handled-backends '(Git))
 

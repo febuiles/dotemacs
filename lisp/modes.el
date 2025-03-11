@@ -40,3 +40,4 @@
 (add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.hx$" . haxe-mode))
 (add-to-list 'auto-mode-alist '("\\.eex$" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx$" . typescript-ts-mode))
