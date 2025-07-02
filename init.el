@@ -131,4 +131,4 @@
  '(custom-safe-themes
    '("3770d0ae70172461ee0a02edcff71b7d480dc54066e8960d8de9367d12171efb" "18cd5a0173772cdaee5522b79c444acbc85f9a06055ec54bb91491173bc90aaa" default))
  '(package-selected-packages
-   '(company zencoding-mode acme-theme fzf elixir-mode plan9-theme yasnippet markdown-preview-mode company-go lsp-ui scala-mode sbt-mode zen-mode dockerfile-mode go-mode typescript-mode ag gist js2-mode projectile-rails deadgrep web-mode rust-mode rhtml-mode ivy tern swift-mode minitest magit lsp-mode json-mode dumb-jump auto-complete)))
+   '(company zencoding-mode acme-theme fzf elixir-mode plan9-theme yasnippet markdown-preview-mode company-go lsp-ui scala-mode sbt-mode zen-mode dockerfile-mode go-mode typescript-mode ag gist js2-mode projectile-rails deadgrep web-mode rust-mode rhtml-mode ivy tern swift-mode minitest magit yaml-mode lsp-mode json-mode dumb-jump auto-complete)))
